@@ -3,6 +3,8 @@
 # Later I "switched" (right click the icon in the systray) to Linux containers and
 # back to Windows. It went flawlessly, to my astonishment.
 
+# DOCKERFIRST8
+
 # Tested on Windows Server 2016, on 2018-04-10
 # Install Docker for Windows using the .exe file you can find from this link:
 # https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows
