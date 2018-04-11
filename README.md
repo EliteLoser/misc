@@ -14,5 +14,5 @@ or for your user only (requires no elevation):
 
 `Install-Module -Name STDockerPS -Scope CurrentUser`
 
-[!alt tag(/img/stdockerps.png)]
+[[!alt tag(/img/stdockerps.png)]]
 
