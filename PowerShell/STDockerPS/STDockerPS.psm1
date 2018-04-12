@@ -83,7 +83,7 @@ PORTS        :
 NAMES        : temp3
 #>  
     if ($Args -match '-q|--quiet') {
-        docker ps -q
+        docker ps $Args
         return
     }
     
