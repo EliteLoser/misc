@@ -1,7 +1,7 @@
 # STDockerPS
 
 Turn "docker ps" output into custom PowerShell objects based on the output text format
-as of 2018-04-11.
+as of 2018-04-12.
 
 Install from the official Microsoft PowerShell Gallery with this command:
 
