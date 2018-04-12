@@ -115,13 +115,17 @@ NAMES        : temp3
     if ($Args -match '-names') {
         $Indexes += $DockerPSTitles.IndexOf($Headers[6])
     }
-    $Indexes += $DockerPSTitles.Length
+    $Indexes += $DockerPSTitles.Length # max name length was 5... (the length of "NAMES")
     $DockerPSOutput | Select-Object -Skip 1 | ForEach-Object {
-        Write-Verbose -Message "Current line: $_"
+        Write-Verbose -Message "Current line: $_ (length: $($_.Length))."
+        $Indexes[-1] = ([String]$_).Length
+        # Avoid spaces in the titles for easier access later.
         $Object = "" | Select-Object -Property ($Headers -replace ' ', '_')
         foreach ($i in 0..($Indexes.Count - 2)) {
-            $CurrentHeader = $Headers[$i] -replace ' ', '_' # avoid spaces in the titles for easier access later...
-            $Object.$CurrentHeader = $_.PadRight($Indexes[-1], " ").SubString($Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])).TrimEnd()
+            $CurrentHeader = $Headers[$i] -replace ' ', '_'
+            $Object.$CurrentHeader = $_.SubString(
+                $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
+            ).TrimEnd()
         }
         $Object
     }
