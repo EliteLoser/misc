@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.0.2'
+ModuleVersion = '2.0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Remove now unneeded padding (flawed logic).'
+        ReleaseNotes = 'Better handling of special case "-q/--quiet".'
 
     } # End of PSData hashtable
 
