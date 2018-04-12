@@ -10,9 +10,9 @@ function DockerPs {
     approach of using regular expressions, since it seems more robust for this
     case/output at hand.
 
-    I omit the names of the containers by default (long story), but for now it's so it
-    fits better into a default-sized PowerShell window. To include the names, add the parameter
-    "-names" (will not be tab completed).
+    Use the parameter --OmitNames (will not be tab completed), to omit the name column for the
+    containers. This is to remedy a broken part of my own brain - or for condensed output -
+    if you prefer. Just "--Omit" will work as a minimum.
     
     Otherwise "docker ps --help" is what you should read  for further information about the
     available parameters.
@@ -20,8 +20,8 @@ function DockerPs {
     -q / --quiet is special-cased to work identically as in the native "docker ps -q" (lists
     only container IDs).
 
-.PARAMETER Names
-    Include the container name column.
+.PARAMETER OmitNames
+    Omit the container name column. Not tab completed. "-Omit" is the shortest allowed form.
 
 .EXAMPLE
 dockerps
@@ -83,16 +83,15 @@ PORTS        :
 NAMES        : temp3
 #>  
     if ($Args -match '-q|--quiet') {
-        docker ps $Args
+        docker ps ($Args -replace '-Omit')
         return
     }
     
-    elseif ($Args -match '-names') {
-        $DockerPSOutput = @(docker ps ($Args -replace '-names'))
-    }
-    
     else {
-        $DockerPSOutput = @(docker ps $Args) -replace '\s+\S+$'
+        $PreservedArgs = $Args | ForEach-Object { $_ } # deep copy
+        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit')) | Where-Object {
+            $_ -match '\S'
+        })
     }
     
     $DockerPSTitles = $DockerPSOutput | Select-Object -First 1
@@ -102,32 +101,31 @@ NAMES        : temp3
     
     $Indexes = @()
     $Headers = @("CONTAINER ID", "IMAGE", "COMMAND", "CREATED", "STATUS",
-        "PORTS")
-    if ($Args -match '-names') {
-        $Headers += "NAMES"
-    }
+        "PORTS", "NAMES")
     $Indexes += $DockerPSTitles.IndexOf($Headers[0])
     $Indexes += $DockerPSTitles.IndexOf($Headers[1])
     $Indexes += $DockerPSTitles.IndexOf($Headers[2])
     $Indexes += $DockerPSTitles.IndexOf($Headers[3])
     $Indexes += $DockerPSTitles.IndexOf($Headers[4])
     $Indexes += $DockerPSTitles.IndexOf($Headers[5])
-    if ($Args -match '-names') {
-        $Indexes += $DockerPSTitles.IndexOf($Headers[6])
-    }
-    $Indexes += $DockerPSTitles.Length # max name length was 5... (the length of "NAMES")
+    $Indexes += $DockerPSTitles.IndexOf($Headers[6])
+    $Indexes += 0 # dummy value, replaced later # max name for a while was 5... (the length of "NAMES")
     $DockerPSOutput | Select-Object -Skip 1 | ForEach-Object {
-        Write-Verbose -Message "Current line: $_ (length: $($_.Length))."
+        Write-Verbose -Message "Current line: $_ (length: $($_.Length))." #-Verbose
         $Indexes[-1] = ([String]$_).Length
         # Avoid spaces in the titles for easier access later.
         $Object = "" | Select-Object -Property ($Headers -replace ' ', '_')
         foreach ($i in 0..($Indexes.Count - 2)) {
             $CurrentHeader = $Headers[$i] -replace ' ', '_'
-            $Object.$CurrentHeader = $_.SubString(
+            $Object.$CurrentHeader = $_.PadRight($Indexes[-1], ' ').SubString(
                 $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
             ).TrimEnd()
         }
-        $Object
+        if ($PreservedArgs -match '-Omit') {
+            $Object | Select-Object -Property @($Headers[0..5] -replace ' ', '_')
+        }
+        else {
+            $Object
+        }
     }
-
 }
