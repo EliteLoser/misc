@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.0.4'
+ModuleVersion = '2.0.7'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -107,10 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '* Adapt to changes (bug fix for "no names" initially).
-* Redesign to include names by default.
-* Add an -OmitNames parameter (not tab completed, "-Omit" shortest form).
-'
+        ReleaseNotes = '* More documentation fixes.'
 
     } # End of PSData hashtable
 
