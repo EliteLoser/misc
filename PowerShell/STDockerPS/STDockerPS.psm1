@@ -129,27 +129,22 @@ e82a27f84cb6
     $Indexes = @()
     $Headers = @("CONTAINER ID", "IMAGE", "COMMAND", "CREATED", "STATUS",
         "PORTS", "NAMES")
-    $Indexes += $DockerPSTitles.IndexOf($Headers[0])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[1])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[2])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[3])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[4])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[5])
-    $Indexes += $DockerPSTitles.IndexOf($Headers[6])
-    $Indexes += 0 # dummy value, replaced later # max name for a while was 5... (the length of "NAMES")
+    foreach ($Header in $Headers) {
+        $Indexes += $DockerPSTitles.IndexOf($Header)
+    }
+    $Indexes += 0 # dummy value, replaced later for each container line, small "trick"..
     $DockerPSOutput | Select-Object -Skip 1 | ForEach-Object {
         Write-Verbose -Message "Current line: $_ (length: $($_.Length))." #-Verbose
         $Indexes[-1] = ([String]$_).Length
         # Avoid spaces in the titles for easier access later.
-        $Object = "" | Select-Object -Property ($Headers -replace ' ', '_')
+        $Object = "" | Select-Object -Property ($MyPSHeaders = @($Headers -replace ' ', '_'))
         foreach ($i in 0..($Indexes.Count - 2)) {
-            $CurrentHeader = $Headers[$i] -replace ' ', '_'
-            $Object.$CurrentHeader = $_.PadRight($Indexes[-1], ' ').SubString(
+            $Object.($MyPSHeaders[$i]) = $_.SubString(
                 $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
             ).TrimEnd()
         }
         if ($PreservedArgs -match '-Omit') {
-            $Object | Select-Object -Property @($Headers[0..5] -replace ' ', '_')
+            $Object | Select-Object -Property ($MyPSHeaders[0..($Headers.Count - 2)])
         }
         else {
             $Object
