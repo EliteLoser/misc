@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.0.9'
+ModuleVersion = '2.0.10'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -27,10 +27,10 @@ Author = 'Joakim Borger Svendsen'
 CompanyName = 'Svendsen Tech'
 
 # Copyright statement for this module
-Copyright = 'Public domain and NATO Top Secret.'
+Copyright = 'Public domain'
 
 # Description of the functionality provided by this module
-Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects based on the docker output text structure as of 2018-04-12.'
+Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects based on the docker output text structure as of 2018-04-13.'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '2.0'
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '* More internal code quality improvements.'
+        ReleaseNotes = '* Fix so -OmitNames works as advertised, not only -Omit.'
 
     } # End of PSData hashtable
 
