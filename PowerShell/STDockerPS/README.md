@@ -12,3 +12,5 @@ or for your user only (does not require elevation/administrator console):
 `Install-Module -Name STDockerPS -Scope CurrentUser`
 
 ![alt tag](/img/stdockerps2.0.7.png)
+
+![alt tag](/img/stdockerps_pic2.png)
