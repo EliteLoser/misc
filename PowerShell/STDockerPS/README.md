@@ -7,7 +7,7 @@ Install from the official Microsoft PowerShell Gallery with this command:
 
 `Install-Module -Name STDockerPS`
 
-or for your user only (requires no elevation):
+or for your user only (does not require elevation/administrator console):
 
 `Install-Module -Name STDockerPS -Scope CurrentUser`
 
