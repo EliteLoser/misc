@@ -110,13 +110,13 @@ e82a27f84cb6
 
 #>  
     if ($Args -match '-q|--quiet') {
-        docker ps ($Args -replace '-Omit')
+        docker ps ($Args -replace '-Omit.*')
         return
     }
     
     else {
         $PreservedArgs = $Args | ForEach-Object { $_ } # deep copy
-        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit')) | Where-Object {
+        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit.*')) | Where-Object {
             $_ -match '\S'
         })
     }
@@ -136,7 +136,7 @@ e82a27f84cb6
     $DockerPSOutput | Select-Object -Skip 1 | ForEach-Object {
         Write-Verbose -Message "Current line: $_ (length: $($_.Length))." #-Verbose
         $Indexes[-1] = ([String]$_).Length
-        # Avoid spaces in the titles for easier access later.
+        # Avoid spaces in the titles, for easier access later.
         $Object = "" | Select-Object -Property ($MyPSHeaders = @($Headers -replace ' ', '_'))
         foreach ($i in 0..($Indexes.Count - 2)) {
             $Object.($MyPSHeaders[$i]) = $_.SubString(
