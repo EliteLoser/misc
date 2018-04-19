@@ -40,7 +40,7 @@ $NumberOfFiles = 10
 $FileSizeBytes = 10MB
 
 if (-not (Test-Path -LiteralPath "$TargetWriteDirectory\RandomData\RandomData.psm1")) {
-    Save-Module -Name RandomData -LiteralPath $TargetWriteDirectory
+     Save-Module -Name RandomData -LiteralPath $TargetWriteDirectory
 }
 
 # Just assigning $foo = docker # works, just think this is probably more robust for whitespace weirdness...
@@ -107,3 +107,32 @@ if ($LASTEXITCODE -ne 0) {
 else {
     "Successfully stopped and deleted the container."
 }
+
+# Prepare for a reboot using STDockerPS (exports the function "dockerps" - I guess there are APIs for this...)
+# PS C:\temp\STDockerPs> dockerps | ft
+#
+#CONTAINER_ID IMAGE                COMMAND      CREATED    STATUS    PORTS NAMES           
+#------------ -----                -------      -------    ------    ----- -----           
+#b1e4f7865718 microsoft/nanoserver "powershell" 2 days ago Up 2 days       temp4           
+#26b08e320d17 microsoft/nanoserver "cmd"        7 days ago Up 7 days       temp1234temp1234
+#d92cb8edaf53 microsoft/nanoserver "powershell" 8 days ago Up 8 days       temp3           
+#9c45b67925db microsoft/nanoserver "powershell" 8 days ago Up 8 days       temp2           
+#520649cfb9d7 microsoft/nanoserver "cmd"        8 days ago Up 8 days       temp1           
+#
+#
+#
+#PS C:\temp\STDockerPs> @(dockerps).ForEach({
+#    docker container stop $_.Container_ID
+#    #docker container rm $_.Container_ID
+#})
+#b1e4f7865718
+#26b08e320d17
+#d92cb8edaf53
+#9c45b67925db
+#520649cfb9d7
+#
+#PS C:\temp\STDockerPs> dockerps | ft
+#
+#PS C:\temp\STDockerPs> 
+#
+#
