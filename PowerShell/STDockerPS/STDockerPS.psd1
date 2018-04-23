@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.1.0'
+ModuleVersion = '2.1.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@ CompanyName = 'Svendsen Tech'
 Copyright = '(C) 2018, Joakim Borger Svendsen.'
 
 # Description of the functionality provided by this module
-Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects with methods - based on the docker output text structure as of 2018-04-23.'
+Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects with methods - based on the docker output text structure as of 2018-04-24.'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '2.0'
@@ -107,7 +107,8 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '* Add basic script methods to the dockerps objects. Will document and make the methods optional soon (slow creation/addition/display).'
+        ReleaseNotes = '* Make script methods on objects optional because it is an expensive operation (specify "-Full").
+* Small code optimizations.'
 
     } # End of PSData hashtable
 
