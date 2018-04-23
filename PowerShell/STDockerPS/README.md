@@ -73,7 +73,7 @@ PS C:\temp\STDockerPs> $Container = dockerps -a -full | where { $_.CONTAINER_ID 
 PS C:\temp\STDockerPs> $Container.STATUS
 Up About a minute
 
-PS C:\temp\STDockerPs> $Container.StopContainer()
+PS C:\temp\STDockerPs> $Container.StopContainer() # prompted to confirm; answered 'yes'
 81c9bfe072e2
 
 PS C:\temp\STDockerPs> $Container.RmContainer( @{ '-PSForce' = 1 } )
