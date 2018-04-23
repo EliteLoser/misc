@@ -80,3 +80,91 @@ PS C:\temp\STDockerPs> $Container.RmContainer( @{ '-PSForce' = 1 } )
 81c9bfe072e2
 
 ```
+
+Example of working on a collection of objects.
+
+```
+PS C:\> $Containers = dockerps -a -full; $Containers | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS                  PORTS NAMES 
+------------ -----                ------- -------      ------                  ----- ----- 
+9d6cc0aac547 microsoft/nanoserver "cmd"   40 hours ago Up 7 minutes                  temp39
+67ca71717171 microsoft/nanoserver "cmd"   40 hours ago Exited (0) 13 hours ago       temp38
+eafcabb612da microsoft/nanoserver "cmd"   40 hours ago Up 40 hours                   temp37
+796438a6e850 microsoft/nanoserver "cmd"   40 hours ago Up 40 hours                   temp36
+a4b49a9c0692 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 40 hours ago       temp35
+f4294be07862 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 40 hours ago       temp34
+8ee7021bec8f microsoft/nanoserver "cmd"   41 hours ago Exited (0) 40 hours ago       temp33
+48754acd5513 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 40 hours ago       temp32
+c66589488683 microsoft/nanoserver "cmd"   41 hours ago Up 41 hours                   temp31
+4e4d98ee2785 microsoft/nanoserver "cmd"   41 hours ago Up 41 hours                   temp30
+c362874ad565 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp14
+163833b7c87c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp13
+e95d69336508 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp12
+cd2eee18a56f microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp11
+d6c3938082ee microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp25
+d4f084fe6f14 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp24
+34f411fc6746 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp23
+0a4b6d83de48 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp22
+708a82ec3d9b microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp21
+17bfc4330461 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp20
+f4ad1ea8c9c6 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp19
+d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp18
+1725e43dd75b microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp17
+3d6e6590f025 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp16
+0000974ceb1c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago       temp15
+
+
+
+PS C:\> $Containers.Where({ $_.STATUS -like 'Exited*'}).StartContainer( @{ '-PSForce' = 1 } )
+67ca71717171
+a4b49a9c0692
+f4294be07862
+8ee7021bec8f
+48754acd5513
+c362874ad565
+163833b7c87c
+e95d69336508
+cd2eee18a56f
+d6c3938082ee
+d4f084fe6f14
+34f411fc6746
+0a4b6d83de48
+708a82ec3d9b
+17bfc4330461
+f4ad1ea8c9c6
+d944d38f46c9
+1725e43dd75b
+3d6e6590f025
+0000974ceb1c
+
+PS C:\> dockerps -a | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS                        PORTS NAMES 
+------------ -----                ------- -------      ------                        ----- ----- 
+9d6cc0aac547 microsoft/nanoserver "cmd"   40 hours ago Up 10 minutes                       temp39
+67ca71717171 microsoft/nanoserver "cmd"   40 hours ago Up About a minute                   temp38
+eafcabb612da microsoft/nanoserver "cmd"   40 hours ago Up 40 hours                         temp37
+796438a6e850 microsoft/nanoserver "cmd"   40 hours ago Up 40 hours                         temp36
+a4b49a9c0692 microsoft/nanoserver "cmd"   41 hours ago Up About a minute                   temp35
+f4294be07862 microsoft/nanoserver "cmd"   41 hours ago Up About a minute                   temp34
+8ee7021bec8f microsoft/nanoserver "cmd"   41 hours ago Up About a minute                   temp33
+48754acd5513 microsoft/nanoserver "cmd"   41 hours ago Up About a minute                   temp32
+c66589488683 microsoft/nanoserver "cmd"   41 hours ago Up 41 hours                         temp31
+4e4d98ee2785 microsoft/nanoserver "cmd"   41 hours ago Up 41 hours                         temp30
+c362874ad565 microsoft/nanoserver "cmd"   41 hours ago Exited (0) About a minute ago       temp14
+163833b7c87c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 59 seconds ago           temp13
+e95d69336508 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 57 seconds ago           temp12
+cd2eee18a56f microsoft/nanoserver "cmd"   41 hours ago Exited (0) 56 seconds ago           temp11
+d6c3938082ee microsoft/nanoserver "cmd"   41 hours ago Exited (0) 54 seconds ago           temp25
+d4f084fe6f14 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 53 seconds ago           temp24
+34f411fc6746 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 51 seconds ago           temp23
+0a4b6d83de48 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 50 seconds ago           temp22
+708a82ec3d9b microsoft/nanoserver "cmd"   41 hours ago Exited (0) 49 seconds ago           temp21
+17bfc4330461 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 47 seconds ago           temp20
+f4ad1ea8c9c6 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 46 seconds ago           temp19
+d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 45 seconds ago           temp18
+1725e43dd75b microsoft/nanoserver "cmd"   41 hours ago Exited (0) 43 seconds ago           temp17
+3d6e6590f025 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 42 seconds ago           temp16
+0000974ceb1c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 seconds ago           temp15
+```
