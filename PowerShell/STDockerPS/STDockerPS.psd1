@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.0.10'
+ModuleVersion = '2.1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -27,10 +27,10 @@ Author = 'Joakim Borger Svendsen'
 CompanyName = 'Svendsen Tech'
 
 # Copyright statement for this module
-Copyright = 'Public domain'
+Copyright = '(C) 2018, Joakim Borger Svendsen.'
 
 # Description of the functionality provided by this module
-Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects based on the docker output text structure as of 2018-04-13.'
+Description = 'Turns "docker ps" output (with optional arguments) into custom PowerShell objects with methods - based on the docker output text structure as of 2018-04-23.'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '2.0'
@@ -69,7 +69,7 @@ PowerShellVersion = '2.0'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('DockerPs')
+FunctionsToExport = @('dockerps')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -95,7 +95,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('Docker', 'PSObject')
+        Tags = @('Docker', 'PSObject', 'Container')
 
         # A URL to the license for this module.
         # LicenseUri = ''
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '* Fix so -OmitNames works as advertised, not only -Omit.'
+        ReleaseNotes = '* Add basic script methods to the dockerps objects. Will document and make the methods optional soon (slow creation/addition/display).'
 
     } # End of PSData hashtable
 
