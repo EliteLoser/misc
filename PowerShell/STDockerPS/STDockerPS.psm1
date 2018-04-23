@@ -1,5 +1,21 @@
 #requires -version 2
-function DockerPs {
+function ListDockerContainerCommands {
+    # List all "docker container --help commands" (or at least attempt to).
+    # I made the leading whitespace mandatory to avoid the exception with the last
+    # line with "Run 'docker container COMMAND --help' for more information on a command.
+    # Not sure which is more rubust, I'm not a shrink and can't read minds either. :p
+    [Regex]::Matches(@( (@(docker container --help) | 
+    Select-String -Pattern '^\s*Commands:\s*$' -Context 10000).context.DisplayPostContext -join "`n"), 
+    '(?m)^\s+(\S+)\s+.+') | ForEach-Object -Begin {
+        $HashTable = @{}
+        } -Process {
+        $HashTable.($_.Groups[1].Value) = $True
+        } -End {
+        $HashTable.Keys
+    }
+}
+
+function dockerps {
 <#
 .SYNOPSIS
     Turn "docker ps" output into custom PowerShell objects.
@@ -133,6 +149,7 @@ e82a27f84cb6
         $Indexes += $DockerPSTitles.IndexOf($Header)
     }
     $Indexes += 0 # dummy value, replaced later for each container line, small "trick"..
+    $TextInfo = [CultureInfo]::CurrentCulture.TextInfo
     $DockerPSOutput | Select-Object -Skip 1 | ForEach-Object {
         Write-Verbose -Message "Current line: $_ (length: $($_.Length))." #-Verbose
         $Indexes[-1] = ([String]$_).Length
@@ -143,6 +160,36 @@ e82a27f84cb6
                 $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
             ).TrimEnd()
         }
+        foreach ($Command in @(ListDockerContainerCommands)) {
+            $TitleCommand = $TextInfo.ToTitleCase($Command)
+            $Object | Add-Member -MemberType ScriptMethod -Name "${TitleCommand}Container" -Value ([ScriptBlock]::Create("
+                [CmdletBinding()]
+                Param([HashTable] `$InternalArgs = @{})
+                function $TitleCommand-DockerContainer {
+                    [CmdletBinding(
+                        SupportsShouldProcess = `$True,
+                        ConfirmImpact = 'High')]
+                    Param(
+                        [System.Object] `$This2,
+                        [HashTable] `$InternalArgs)
+                    if (`$InternalArgs.Keys -match '-?PSForce' -or `
+                        `$PSCmdlet.ShouldProcess(`"[OPERATION: $Command] `$(`$This2.CONTAINER_ID) (`$(`$This2.NAMES))`")) {
+                        `$OldEAP = `$ErrorActionPreference
+                        `$ErrorActionPreference = 'Stop'
+                        try {
+                            Write-Verbose -Verbose `"Running: docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce') `$(`$This2.CONTAINER_ID)`"
+                            docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce') `$(`$This2.CONTAINER_ID)
+                        }
+                        catch {
+                            Write-Error -Message `$_.ToString()
+                        }
+                        `$ErrorActionPreference = `$OldEAP
+                    }
+                }
+                $TitleCommand-DockerContainer -This2 `$this -InternalArgs `$InternalArgs
+            "))
+        }
+        
         if ($PreservedArgs -match '-Omit') {
             $Object | Select-Object -Property ($MyPSHeaders[0..($Headers.Count - 2)])
         }
