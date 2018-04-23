@@ -126,13 +126,13 @@ e82a27f84cb6
 
 #>  
     if ($Args -match '-q|--quiet') {
-        docker ps ($Args -replace '-Omit.*')
+        docker ps ($Args -replace '-Omit.*' -replace '-Full')
         return
     }
     
     else {
         $PreservedArgs = $Args | ForEach-Object { $_ } # deep copy
-        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit.*')) | Where-Object {
+        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit.*' -replace '-Full')) | Where-Object {
             $_ -match '\S'
         })
     }
@@ -160,36 +160,39 @@ e82a27f84cb6
                 $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
             ).TrimEnd()
         }
-        foreach ($Command in @(ListDockerContainerCommands)) {
-            $TitleCommand = $TextInfo.ToTitleCase($Command)
-            $Object | Add-Member -MemberType ScriptMethod -Name "${TitleCommand}Container" -Value ([ScriptBlock]::Create("
-                [CmdletBinding()]
-                Param([HashTable] `$InternalArgs = @{})
-                function $TitleCommand-DockerContainer {
-                    [CmdletBinding(
-                        SupportsShouldProcess = `$True,
-                        ConfirmImpact = 'High')]
-                    Param(
-                        [System.Object] `$This2,
-                        [HashTable] `$InternalArgs)
-                    if (`$InternalArgs.Keys -match '-?PSForce' -or `
-                        `$PSCmdlet.ShouldProcess(`"[OPERATION: $Command] `$(`$This2.CONTAINER_ID) (`$(`$This2.NAMES))`")) {
-                        `$OldEAP = `$ErrorActionPreference
-                        `$ErrorActionPreference = 'Stop'
-                        try {
-                            Write-Verbose -Verbose `"Running: docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce') `$(`$This2.CONTAINER_ID)`"
-                            docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce') `$(`$This2.CONTAINER_ID)
+        if ($Preservedargs -match '-Full') {
+            foreach ($Command in @(ListDockerContainerCommands)) {
+                $TitleCommand = $TextInfo.ToTitleCase($Command)
+                $Object | Add-Member -MemberType ScriptMethod -Name "${TitleCommand}Container" -Value ([ScriptBlock]::Create("
+                    [CmdletBinding()]
+                    Param([HashTable] `$InternalArgs = @{})
+                    function $TitleCommand-DockerContainer {
+                        [CmdletBinding(
+                            SupportsShouldProcess = `$True,
+                            ConfirmImpact = 'High')]
+                        Param(
+                            [System.Object] `$This2,
+                            [HashTable] `$InternalArgs)
+                        if (`$InternalArgs.Keys -match '-?PSForce' -or `
+                            `$PSCmdlet.ShouldProcess(`"[OPERATION: $Command] `$(`$This2.CONTAINER_ID) (`$(`$This2.NAMES))`")) {
+                            `$OldEAP = `$ErrorActionPreference
+                            `$ErrorActionPreference = 'Stop'
+                            try {
+                                if (`$InternalArgs.ContainsKey('-Verbose')) {
+                                    Write-Verbose -Verbose `"Running: docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce|-?Verbose') `$(`$This2.CONTAINER_ID)`"
+                                }
+                                docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce|-?Verbose') `$(`$This2.CONTAINER_ID)
+                            }
+                            catch {
+                                Write-Error -Message `$_.ToString()
+                            }
+                            `$ErrorActionPreference = `$OldEAP
                         }
-                        catch {
-                            Write-Error -Message `$_.ToString()
-                        }
-                        `$ErrorActionPreference = `$OldEAP
                     }
-                }
-                $TitleCommand-DockerContainer -This2 `$this -InternalArgs `$InternalArgs
-            "))
+                    $TitleCommand-DockerContainer -This2 `$this -InternalArgs `$InternalArgs
+                "))
+            }
         }
-        
         if ($PreservedArgs -match '-Omit') {
             $Object | Select-Object -Property ($MyPSHeaders[0..($Headers.Count - 2)])
         }
