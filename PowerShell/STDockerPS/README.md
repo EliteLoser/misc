@@ -11,6 +11,8 @@ or for your user only (does not require elevation/administrator console):
 
 `Install-Module -Name STDockerPS -Scope CurrentUser`
 
+Use the '-full' parameter for the dockerps function to also get methods attached to the objects, as demonstrated in the screenshots below. By default these methods are not generated since it is a fairly expensive/slow operation, at least when you have 20+ containers or so.
+
 ![alt tag](/img/stdockerps2.0.7.png)
 
 ![alt tag](/img/stdockerps-psobject-methods.png)
