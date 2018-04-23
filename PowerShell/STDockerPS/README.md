@@ -13,6 +13,10 @@ or for your user only (does not require elevation/administrator console):
 
 ![alt tag](/img/stdockerps2.0.7.png)
 
+![alt tag](/img/stdockerps_psobject-methods.png)
+
+![alt tag](/img/stdockerps_psobject-properties.png)
+
 ![alt tag](/img/stdockerps_pic2.png)
 
 ```powershell
