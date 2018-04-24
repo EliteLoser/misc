@@ -116,7 +116,7 @@ d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 hours ago  
 
 
 
-PS C:\> $Containers.Where({ $_.STATUS -like 'Exited*'}).StartContainer( @{ '-PSForce' = 1 } )
+PS C:\> $Containers.Where({ $_.STATUS -like 'Exited*'}).StartContainer( @{ PSForce = 1 } )
 67ca71717171
 a4b49a9c0692
 f4294be07862
