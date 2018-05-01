@@ -1,7 +1,11 @@
 # STDockerPS
 
 Turn "docker ps" output into custom PowerShell objects based on the output text format
-as of 2018-04-23.
+as of 2018-05-01.
+
+Exported functions: dockerps, dockerpsq
+
+There's built-in help with examples (e.g. "Get-Help dockerps").
 
 Install from the official Microsoft PowerShell Gallery with this command:
 
@@ -11,7 +15,9 @@ or for your user only (does not require elevation/administrator console):
 
 `Install-Module -Name STDockerPS -Scope CurrentUser`
 
-Use the '-full' parameter for the dockerps function to also get methods attached to the objects, as demonstrated in the screenshots below. By default these methods are not generated since it is a fairly expensive/slow operation, at least when you have 20+ containers or so.
+Use the '-full' parameter for the dockerps function to also get dynamically generated methods attached to the objects, as demonstrated in the screenshots below. The methods are "dumb" and not custom for each docker command. They simply run "docker container <command_here> <container_ID_here>". You can cheat a bit and pass in parameters to the methods in a hashtable. If you pass keys that correspond to docker commands that go before the container ID, it should work.
+
+I'll figure out something better later, hopefully. Maybe looking at source code and generating from that.
 
 ![alt tag](/img/stdockerps2.0.7.png)
 
