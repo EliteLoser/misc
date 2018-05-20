@@ -19,6 +19,10 @@ Use the '-full' parameter for the dockerps function to also get dynamically gene
 
 I'll figure out something better later, hopefully. Maybe looking at source code and generating from that.
 
+There are two hashtable keys (values are ignored) that are special-cased: -PSForce and -Verbose. The dash is optional, for significantly increased brevity when passing the hash. This means that both `$ContainerVar.RmContainer( @{ "-PSForce" = $True } )` and `$ContainerVar.RmContainer( @{ PSForce = 1 })` will work equivalently.
+
+Using "PSForce" means it will not prompt (I made it prompt by default, seemed like a good idea at the time) before performing the requested action. Using "Verbose" means it will provide verbose output to output stream 4 while the ID is passed to STDOUT, output stream 1.
+
 ![alt tag](/img/stdockerps2.0.7.png)
 
 ![alt tag](/img/stdockerps-psobject-methods.png)
