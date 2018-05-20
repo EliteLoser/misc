@@ -2,7 +2,7 @@
 function GetDockerContainerCommands {
     # List all "docker container --help commands" (or at least attempt to).
     # I made the leading whitespace mandatory to avoid the exception with the last
-    # line with "Run 'docker container COMMAND --help' for more information on a command.
+    # line with "Run 'docker container COMMAND --help' for more information on a command."
     # Not sure which is more rubust, I'm not a shrink and can't read minds either. :p
     
     # Cache results, obvious optimization... Should replace these docker client things
@@ -212,6 +212,29 @@ c08e1e9ff5d7 microsoft/nanoserver "powershell" 3 minutes ago Up 34 seconds      
 dbb26f999892 microsoft/nanoserver "cmd"        4 minutes ago Up 4 minutes                       temp6 
 d449d533d010 microsoft/nanoserver "cmd"        4 minutes ago Up 4 minutes                       temp5 
 
+.EXAMPLE
+PS C:\temp\STDockerPs> $x[0].LsContainer(@{ PSForce = 1; Verbose = 1; '"# comment key' = 1})
+VERBOSE: Running: docker container ls  "#  0ee74ffb1c94
+
+CONTAINER ID        IMAGE                  COMMAND             CREATED             STATUS              PORTS               NAMES
+0ee74ffb1c94        microsoft/nanoserver   "powershell"        2 weeks ago         Up 11 hours                             temp14
+6c692d226125        microsoft/nanoserver   "powershell"        2 weeks ago         Up 11 hours                             temp13
+168a95901a92        microsoft/nanoserver   "powershell"        2 weeks ago         Up 11 hours                             temp12
+e016f93d662d        microsoft/nanoserver   "powershell"        2 weeks ago         Up 11 hours                             temp11
+
+This runs the command "docker container ls" in a very, very inconvenient way. It's similar to
+SQL injection, except opposite, and ... not. Adding the keys "-PSForce" (to avoid being prompted)
+and/or "-Verbose" is supported. I made the dash optional for this so you can skip the quotes
+around the key, i.e.: @{ PSForce = 1; Verbose = 1 } # this will work.
+
+You can add more custom parameters that go before the ID as hashtable keys, the values are ignored, 
+and if you don't want the ID
+at the end, you can use the "comment key" you see above. All you need to add is: '"#' = 1
+to the hashtable and it will end the string and comment out the container ID that's the remainder
+of the line. It's for flexibility at this point. I don't see how security is even related now?
+It's a tool for the Docker administrators. If somehow it evolved into an "end user" tool, then
+I can see it, but I don't see that for this.
+
 #>  
     if ($Args -match '-q|--quiet') {
         docker ps ($Args -replace '-Omit.*|-Full')
@@ -219,9 +242,18 @@ d449d533d010 microsoft/nanoserver "cmd"        4 minutes ago Up 4 minutes       
     }
     else {
         $PreservedArgs = $Args | ForEach-Object { $_ } # deep copy
-        $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit.*|-Full')) | Where-Object {
-            $_ -match '\S'
-        })
+        $OldEAP = $ErrorActionPreference
+        $ErrorActionPreference = "Stop"
+        try {
+            $DockerPSOutput = @(@(docker ps ($Args -replace '-Omit.*|-Full')) | Where-Object {
+                $_ -match '\S'
+            })
+        }
+        catch {
+            Write-Error -Message "Caught an error: $_" -ErrorAction Stop
+            return
+        }
+        $ErrorActionPreference = $OldEAP
     }
     
     $DockerPSTitles = $DockerPSOutput | Select-Object -First 1
@@ -273,10 +305,10 @@ d449d533d010 microsoft/nanoserver "cmd"        4 minutes ago Up 4 minutes       
                             `$OldEAP = `$ErrorActionPreference
                             `$ErrorActionPreference = 'Stop'
                             try {
-                                if (`$InternalArgs.ContainsKey('-Verbose')) {
+                                if (`$InternalArgs.Keys -match '^-?Verbose$') {
                                     Write-Verbose -Verbose `"Running: docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce|-?Verbose') `$(`$This2.CONTAINER_ID)`"
                                 }
-                                # Wrap in a powershell.exe call to allow for commenting out the ID (this is weird...)
+                                # Wrap in a powershell.exe call to allow for commenting out the ID (this is, admittedly, a little weird...)
                                 powershell -command `"docker container $Command `$(`$InternalArgs.Keys -replace '-?PSForce|-?Verbose') `$(`$This2.CONTAINER_ID)`"
                             }
                             catch {
