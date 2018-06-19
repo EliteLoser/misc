@@ -14,7 +14,7 @@ function GetDockerContainerCommands {
         $Script:DockerContainerCommands.Keys
         return
     }
-    [Regex]::Matches(@( (@(docker container --help) | 
+    [Regex]::Matches(( (@(docker container --help) | 
     Select-String -Pattern '^\s*Commands:\s*$' -Context 10000).Context.DisplayPostContext -join "`n"), 
     '(?m)^\s+(\S+)\s+.+') | ForEach-Object -Begin {
         $HashTable = @{}
@@ -227,7 +227,7 @@ SQL injection, except opposite, and ... not. Adding the keys "-PSForce" (to avoi
 and/or "-Verbose" is supported. I made the dash optional for this so you can skip the quotes
 around the key, i.e.: @{ PSForce = 1; Verbose = 1 } # this will work.
 
-You can add more custom parameters that go before the ID as hashtable keys, the values are ignored, 
+You can add more custom parameters that go before the ID, as hashtable keys. The values are ignored 
 and if you don't want the ID
 at the end, you can use the "comment key" you see above. All you need to add is: '"#' = 1
 to the hashtable and it will end the string and comment out the container ID that's the remainder
@@ -284,7 +284,7 @@ I can see it, but I don't see that for this.
         foreach ($i in 0..($Indexes.Count - 2)) {
             $Object.($MyPSHeaders[$i]) = $_.SubString(
                 $Indexes[$i], ($Indexes[$i + 1] - $Indexes[$i])
-            ).TrimEnd()
+            ).Trim()
         }
         
         if ($PreservedArgs -match '-Full') {
@@ -354,10 +354,10 @@ function dockerpsq {
         [Switch] $Full)
     @(dockerps -a $( if ($Full) { "-Full" } )) | Where-Object {
         if ($PSCmdlet.ParameterSetName -eq "ID") {
-            $Identity -like $_.CONTAINER_ID
+            $_.CONTAINER_ID -like $Identity
         }
         else {
-            $Name -like $_.NAMES
+            $_.NAMES -like $Name
         }
     }
 }
