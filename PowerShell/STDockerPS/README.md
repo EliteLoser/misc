@@ -1,7 +1,7 @@
 # STDockerPS
 
 Turn "docker ps" output into custom PowerShell objects based on the output text format
-as of 2018-05-20.
+as of 2018-06-19.
 
 Exported functions: dockerps, dockerpsq
 
