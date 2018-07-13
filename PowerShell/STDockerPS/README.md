@@ -178,3 +178,38 @@ d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 45 seconds ago
 3d6e6590f025 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 42 seconds ago           temp16
 0000974ceb1c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 seconds ago           temp15
 ```
+
+# dockerpsq Example
+
+```
+PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> $c.StartContainer(( $DoIt = @{ PSForce = 1 } ))
+4e4d98ee2785
+
+PS C:\Windows\system32> $c | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS                 PORTS NAMES 
+------------ -----                ------- -------      ------                 ----- ----- 
+4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Exited (0) 7 weeks ago       temp30
+
+
+
+PS C:\Windows\system32> # the data isn't updated until you query again...
+
+PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> $c | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS        PORTS NAMES 
+------------ -----                ------- -------      ------        ----- ----- 
+4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Up 52 seconds       temp30
+
+
+
+PS C:\Windows\system32> $c.StopContainer($DoIt)
+4e4d98ee2785
+
+PS C:\Windows\system32> $c.RmContainer($DoIt)
+4e4d98ee2785
+```
