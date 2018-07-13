@@ -212,4 +212,8 @@ PS C:\Windows\system32> $c.StopContainer($DoIt)
 
 PS C:\Windows\system32> $c.RmContainer($DoIt)
 4e4d98ee2785
+
+PS C:\Windows\system32> dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> 
 ```
