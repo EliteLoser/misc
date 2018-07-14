@@ -1,6 +1,6 @@
 #requires -version 2
 function GetDockerContainerCommands {
-    # List all "docker container --help commands" (or at least attempt to).
+    # List all "docker container --help" commands (or at least attempt to).
     # I made the leading whitespace mandatory to avoid the exception with the last
     # line with "Run 'docker container COMMAND --help' for more information on a command."
     # Not sure which is more rubust, I'm not a shrink and can't read minds either. :p
@@ -338,26 +338,70 @@ function dockerpsq {
         Use the "-Full" parameter to also get docker container methods
         attached to the object or objects returned. This is a bit slower.
 
+    .PARAMETER Any
+        Default, position 0. Pass in either name or ID wildcard string.
     .PARAMETER Identity
-        Container ID to query for.
+        Container ID to query for. Wildcards supported.
     .PARAMETER Name
-        Container name to query for.
+        Container name to query for. Wildcards supported.
     .PARAMETER Full
         Add docker script methods to the returned PowerShell objects.
+    
+    .EXAMPLE
+    PS C:\temp\STDockerPs> dockerpsq temp34, c6658*
+
+
+    CONTAINER_ID : f4294be07862
+    IMAGE        : microsoft/nanoserver
+    COMMAND      : "cmd"
+    CREATED      : 2 months ago
+    STATUS       : Exited (0) 7 weeks ago
+    PORTS        : 
+    NAMES        : temp34
+
+    CONTAINER_ID : c66589488683
+    IMAGE        : microsoft/nanoserver
+    COMMAND      : "cmd"
+    CREATED      : 2 months ago
+    STATUS       : Exited (0) 7 weeks ago
+    PORTS        : 
+    NAMES        : temp31
+    
     #>
     [CmdletBinding(
-        DefaultParameterSetName = "ID"
+        DefaultParameterSetName = "Any"
     )]
     Param(
-        [Parameter(ParameterSetName="ID", Mandatory = $True)][String[]] $Identity,
-        [Parameter(ParameterSetName="Name", Mandatory = $True)][String[]] $Name,
+        [Parameter(ParameterSetName="Any",
+                   Mandatory = $True,
+                   Position = 0)][String[]] $Container,
+        [Parameter(ParameterSetName="ID",
+                   Mandatory = $True)][String[]] $Identity,
+        [Parameter(ParameterSetName="Name",
+                   Mandatory = $True)][String[]] $Name,
         [Switch] $Full)
-    @(dockerps -a $( if ($Full) { "-Full" } )) | Where-Object {
-        if ($PSCmdlet.ParameterSetName -eq "ID") {
-            $_.CONTAINER_ID -like $Identity
+    @(dockerps -a $( if ($Full) { "-Full" } )) | ForEach-Object {
+        if ($PSCmdlet.ParameterSetName -eq "Any") {
+            foreach ($Cont in $Container) {
+                if ($_.CONTAINER_ID -like $Cont -or $_.NAMES -like $Cont) {
+                    $_
+                }
+            }
         }
-        else {
-            $_.NAMES -like $Name
+        elseif ($PSCmdlet.ParameterSetName -eq "Identity") {
+            foreach ($Id in $Identity) {
+                if ($_.CONTAINER_ID -like $Id) {
+                    $_
+                }
+            }
+        }
+        if ($PSCmdlet.ParameterSetName -eq "Name") {
+            foreach ($Nom in $Name) {
+                if ($_.NAMES -like $Nom) {
+                    $_
+                }
+            }
+        
         }
     }
 }
