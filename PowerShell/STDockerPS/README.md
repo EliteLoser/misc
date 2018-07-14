@@ -134,7 +134,7 @@ d944d38f46c9 microsoft/nanoserver "cmd"   38 hours ago Exited (0) 38 hours ago  
 
 
 
-PS C:\temp\STDockerPs> $Containers[0].StartContainer( @{ '-PSForce' = 1; '-Verbose' = 1 } )
+PS C:\temp\STDockerPs> $Containers[0].StartContainer( @{ PSForce = 1; Verbose = 1 } )
 VERBOSE: Running: docker container start   81c9bfe072e2
 81c9bfe072e2
 
