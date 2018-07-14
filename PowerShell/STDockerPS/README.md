@@ -31,6 +31,70 @@ Using "PSForce" means it will not prompt (I made it prompt by default, seemed li
 
 ![alt tag](/img/stdockerps_pic2.png)
 
+
+# dockerpsq Examples
+
+```
+PS C:\temp\STDockerPs> dockerpsq temp34, c6658*
+
+
+CONTAINER_ID : f4294be07862
+IMAGE        : microsoft/nanoserver
+COMMAND      : "cmd"
+CREATED      : 2 months ago
+STATUS       : Exited (0) 7 weeks ago
+PORTS        : 
+NAMES        : temp34
+
+CONTAINER_ID : c66589488683
+IMAGE        : microsoft/nanoserver
+COMMAND      : "cmd"
+CREATED      : 2 months ago
+STATUS       : Exited (0) 7 weeks ago
+PORTS        : 
+NAMES        : temp31
+
+```
+
+```
+PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> $c.StartContainer(( $DoIt = @{ PSForce = 1 } ))
+4e4d98ee2785
+
+PS C:\Windows\system32> $c | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS                 PORTS NAMES 
+------------ -----                ------- -------      ------                 ----- ----- 
+4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Exited (0) 7 weeks ago       temp30
+
+
+
+PS C:\Windows\system32> # the data isn't updated until you query again...
+
+PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> $c | ft
+
+CONTAINER_ID IMAGE                COMMAND CREATED      STATUS        PORTS NAMES 
+------------ -----                ------- -------      ------        ----- ----- 
+4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Up 52 seconds       temp30
+
+
+
+PS C:\Windows\system32> $c.StopContainer($DoIt)
+4e4d98ee2785
+
+PS C:\Windows\system32> $c.RmContainer($DoIt)
+4e4d98ee2785
+
+PS C:\Windows\system32> dockerpsq -Name temp30 -Full
+
+PS C:\Windows\system32> 
+```
+
+# Examples
+
 ```powershell
 PS C:\temp\STDockerPs> $Containers = dockerps -a -full # '-full' is for dockerps, not docker ps
 
@@ -177,65 +241,4 @@ d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 45 seconds ago
 1725e43dd75b microsoft/nanoserver "cmd"   41 hours ago Exited (0) 43 seconds ago           temp17
 3d6e6590f025 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 42 seconds ago           temp16
 0000974ceb1c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 seconds ago           temp15
-```
-
-# dockerpsq Examples
-
-```
-PS C:\temp\STDockerPs> dockerpsq temp34, c6658*
-
-
-CONTAINER_ID : f4294be07862
-IMAGE        : microsoft/nanoserver
-COMMAND      : "cmd"
-CREATED      : 2 months ago
-STATUS       : Exited (0) 7 weeks ago
-PORTS        : 
-NAMES        : temp34
-
-CONTAINER_ID : c66589488683
-IMAGE        : microsoft/nanoserver
-COMMAND      : "cmd"
-CREATED      : 2 months ago
-STATUS       : Exited (0) 7 weeks ago
-PORTS        : 
-NAMES        : temp31
-
-```
-
-```
-PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
-
-PS C:\Windows\system32> $c.StartContainer(( $DoIt = @{ PSForce = 1 } ))
-4e4d98ee2785
-
-PS C:\Windows\system32> $c | ft
-
-CONTAINER_ID IMAGE                COMMAND CREATED      STATUS                 PORTS NAMES 
------------- -----                ------- -------      ------                 ----- ----- 
-4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Exited (0) 7 weeks ago       temp30
-
-
-
-PS C:\Windows\system32> # the data isn't updated until you query again...
-
-PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
-
-PS C:\Windows\system32> $c | ft
-
-CONTAINER_ID IMAGE                COMMAND CREATED      STATUS        PORTS NAMES 
------------- -----                ------- -------      ------        ----- ----- 
-4e4d98ee2785 microsoft/nanoserver "cmd"   2 months ago Up 52 seconds       temp30
-
-
-
-PS C:\Windows\system32> $c.StopContainer($DoIt)
-4e4d98ee2785
-
-PS C:\Windows\system32> $c.RmContainer($DoIt)
-4e4d98ee2785
-
-PS C:\Windows\system32> dockerpsq -Name temp30 -Full
-
-PS C:\Windows\system32> 
 ```
