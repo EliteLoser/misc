@@ -12,7 +12,7 @@
 RootModule = 'STDockerPS.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.1.2.5'
+ModuleVersion = '2.1.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -107,7 +107,8 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '* Parsing workaround. Fixes.'
+        ReleaseNotes = '* Allow multiple IDs or names for dockerpsq.
+* Make dockerpsq accept both names and IDs by default, with support for wildcards.'
 
     } # End of PSData hashtable
 
