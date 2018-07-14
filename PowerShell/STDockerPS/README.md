@@ -179,7 +179,29 @@ d944d38f46c9 microsoft/nanoserver "cmd"   41 hours ago Exited (0) 45 seconds ago
 0000974ceb1c microsoft/nanoserver "cmd"   41 hours ago Exited (0) 41 seconds ago           temp15
 ```
 
-# dockerpsq Example
+# dockerpsq Examples
+
+```
+PS C:\temp\STDockerPs> dockerpsq temp34, c6658*
+
+
+CONTAINER_ID : f4294be07862
+IMAGE        : microsoft/nanoserver
+COMMAND      : "cmd"
+CREATED      : 2 months ago
+STATUS       : Exited (0) 7 weeks ago
+PORTS        : 
+NAMES        : temp34
+
+CONTAINER_ID : c66589488683
+IMAGE        : microsoft/nanoserver
+COMMAND      : "cmd"
+CREATED      : 2 months ago
+STATUS       : Exited (0) 7 weeks ago
+PORTS        : 
+NAMES        : temp31
+
+```
 
 ```
 PS C:\Windows\system32> $c = dockerpsq -Name temp30 -Full
