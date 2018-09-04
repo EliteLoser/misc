@@ -1,6 +1,6 @@
 Svendsen Smart Windows
  
-Copyright © 2018-09-05. All rights reserved.
+Copyright © Joakim Borger Svendsen. 2018-09-05. All rights reserved.
 
 Electronic windows (and doors/other?) that can be opened with an app and/or voice control.
  
