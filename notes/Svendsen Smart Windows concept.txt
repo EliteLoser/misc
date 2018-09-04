@@ -2,7 +2,9 @@ Svendsen Smart Windows
  
 Copyright © Joakim Borger Svendsen. 2018-09-05. All rights reserved.
 
-Electronic windows (and doors/other?) that can be opened with an app and/or voice control.
+Electronic windows (and doors/hatches/other?) that can be opened with an app and/or voice control.
+
+Smart dog/cat door that recognizes a face/animal/eyes similar to how iPhone X does its facial recognition. Must work in the dark.
  
 Metal and plastic only, not wood, for standing weather.
  
