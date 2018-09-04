@@ -1,0 +1,21 @@
+Svendsen Smart Windows
+
+Electronic windows (and doors/other?) that can be opened with an app and/or voice control.
+
+Metal and plastic only, not wood, for standing weather.
+
+Lifetime should be up to 30 years, "almost guaranteed".
+
+Physical kill switch for each windows / each door / other.
+
+Kill switch for the entire house one or more places, typically at the front door / exit, with a visual, permanent warning about open windows and doors. A choice to close everything from there as well as in the app, and a warning if you leave the house. Optionally also on the phone as you leave based on location/GPS/wireless loss, etc. Success and failure of closing everything or optional elements will be reported and visual status is always reported easily viewable (to the extent possible given size of domicile).
+
+Maybe show text messages, chat, email, weather forecast, phone notifications set in the app, etc. in an area of the screen. A small touch screen area on the window? Movable area(s) in a later version?
+
+Farther into the future maybe a fully artificial window of transparent liquid crystal or something that emulates the light outside as perfectly as possible to look exactly as it would as if it was an actual window, but artificially, so you can also watch TV/whatever on the window (woo!) - and of course turn a rainy day into a sunny day - or vice versa.
+
+Voice control is a must. Apple HomeKit and Google/Android and potentially other integrations. Form a standard? Get the main players supported (Android/iOS/…?).
+
+By default windows will automatically close if rain is detected by sensors (combine both visual and water detection sensors? Humidity? Hail? Snow?). Can set exceptions.
+
+Have windows and/or doors (specific or all) close when temperature reaches a certain level.
