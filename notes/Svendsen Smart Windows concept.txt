@@ -22,7 +22,7 @@ Maybe show text messages, chat, email, weather forecast, phone notifications set
  
 Farther into the future maybe a fully artificial window of transparent liquid crystal or something that emulates the light outside as perfectly as possible to look exactly as it would as if it was an actual window, but artificially, so you can also watch TV/whatever on the window (woo!) - and of course turn a rainy day into a sunny day - or vice versa.
  
-Voice control is a must. Apple HomeKit and Google/Android and potentially other integrations. Form a standard? Get the main players supported (Android/iOS/Cortana…?).
+Voice control is a must. Apple HomeKit and Google/Android and potentially other integrations. Form a standard? Get the main players supported (Android/iOS/Windows (Cortana)…?).
  
 By default, windows will automatically close if rain is detected by sensors (combine both visual and water detection sensors? Humidity? Hail? Snow?). Can set exceptions.
  
