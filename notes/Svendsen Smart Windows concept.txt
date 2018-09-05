@@ -39,3 +39,7 @@ Make it pretty!
 Make it almost maintenance free.
 
 Seamless manual override/intervention. Meaning if a window is opening and you want it to go faster to the angle you set it to and just push it with your hands. Beyond the angle with manual intervention, it will go up to the set X %, but if you push farther, not go back to the X %. Hm. Yeah. And it should not hurt engines at all. Seamless and not physically hard to do. Pleasant and convenient should be the experience.
+
+Make the windows and doors standard sizes in various regions, to be mounted on existing houses/homes.
+
+
