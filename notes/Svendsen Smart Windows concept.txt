@@ -44,3 +44,6 @@ Make the windows and doors standard sizes in various regions, to be mounted on e
 
 If something blocks the door/window, stop and possibly notify/warn with voice and/or phone notification. Maybe ask for “push a little harder?” and have three levels, such as “gently”, “firmly” and “hard”. Maybe it will work around mechanical issues sometimes to use the “hard” push/force option.
 
+Temperature regulating system to go along, possibly working with outside/inside temperature as I talked about, but also capable of heating with heat pumps or similar in the same series. Maybe many smaller heat pumps or heating devices, electrical cord-powered.
+
+
