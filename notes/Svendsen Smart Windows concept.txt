@@ -16,7 +16,9 @@ Movement of the window/door/other should be sturdy, steady and "pleasant" - not 
  
 Very low noise is required.
  
-Kill switch for the entire house one or more places, typically at the front door / exit, with a visual, permanent warning about open windows and doors. A choice to close everything from there as well as in the app, and a warning if you leave the house. Optionally also on the phone as you leave based on location/GPS/wireless loss, etc. Success and failure of closing everything or optional elements will be reported and visual status is always reported easily viewable (to the extent possible given size of domicile).
+Physical kill switch for opening/closing for each window/unit.
+
+Physical kill switch for the entire house one or more places, typically at the front door / exit, with a visual, permanent warning about open windows and doors. A choice to close everything from there as well as in the app, and a warning if you leave the house. Optionally also on the phone as you leave based on location/GPS/wireless loss, etc. Success and failure of closing everything or optional elements will be reported and visual status is always reported easily viewable, to the extent possible given size of domicile and/or number of units controlled by the Svendsen Smart Home app ( :P ).
  
 Maybe show text messages, chat, email, weather forecast, phone notifications set in the app, etc. in an area of the screen. A small touch screen area on the window? Movable area(s) in a later version?
  
