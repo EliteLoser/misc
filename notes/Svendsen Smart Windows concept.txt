@@ -36,4 +36,4 @@ Avoid batteries when possible. When needed, battery lifetime should be ridiculou
 
 Make it pretty!
 
-
+Make it almost maintenance free.
