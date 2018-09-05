@@ -32,4 +32,6 @@ Custom automation routines with a high degree of IFTTT support (If this, then th
 
 Presets for things like “let air in” (create a draft) that can be customized and activated by voice. “Hey, <triggerword>, <home name> <custom routine name>” e.g.: “Hey, Siri, Svendsen home let air in”.
 
-Avoid batteries when possible. When needed, battery lifetime should be ridiculously long and the battery type should be commonly and easily available.
+Avoid batteries when possible. When needed, battery lifetime should be ridiculously long and the battery type should be commonly and easily available, and the units will always ship with batteries included.
+
+
