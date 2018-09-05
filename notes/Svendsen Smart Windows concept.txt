@@ -31,10 +31,16 @@ Have windows and/or doors (specific or all) close when temperature reaches a cer
 Custom automation routines with a high degree of IFTTT support (If this, then that).
 
 Presets for things like “let air in” (create a draft) that can be customized and activated by voice. “Hey, <triggerword>, <home name> <custom routine name>” e.g.: “Hey, Siri, Svendsen home let air in”.
+
 Avoid batteries when possible. When needed, battery lifetime should be ridiculously long and the battery type should be commonly and easily available, and the units will always ship with batteries included.
+
 Make it pretty!
+
 Make it almost maintenance free.
+
 Seamless manual override/intervention. Meaning if a window is opening and you want it to go faster to the angle you set it to and just push it with your hands. Beyond the angle with manual intervention, it will go up to the set X %, but if you push farther, not go back to the X %. Hm. Yeah. And it should not hurt engines at all. Seamless and not physically hard to do. Pleasant and convenient should be the experience.
+
 Make the windows and doors standard sizes in various regions, to be mounted on existing houses/homes.
+
 If something blocks the door/window, stop and possibly notify/warn with voice and/or phone notification. Maybe ask for “push a little harder?” and have three levels, such as “gently”, “firmly” and “hard”. Maybe it will work around mechanical issues sometimes to use the “hard” push/force option.
 
