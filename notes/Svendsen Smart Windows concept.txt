@@ -1,4 +1,4 @@
-Svendsen Smart Windows
+Svendsen Smart Home System
  
 Copyright © Joakim Borger Svendsen. 2018-09-05. All rights reserved.
 
@@ -26,7 +26,7 @@ Voice control is a must. Apple HomeKit and Google/Android and potentially other 
  
 By default, windows will automatically close if rain is detected by sensors (combine both visual and water detection sensors? Humidity? Hail? Snow?). Can set exceptions.
  
-Have windows and/or doors (specific or all) close when temperature reaches a certain level.
+Have windows and/or doors (specific or all) close when temperature reaches a certain level. Conditionally open windows if temperature outside is lower than inside, combined with inside temperature going above a threshold value, etc.
  
 Custom automation routines with a high degree of IFTTT support (If this, then that).
 
