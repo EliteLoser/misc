@@ -34,4 +34,6 @@ Presets for things like “let air in” (create a draft) that can be customized
 
 Avoid batteries when possible. When needed, battery lifetime should be ridiculously long and the battery type should be commonly and easily available, and the units will always ship with batteries included.
 
+Make it pretty!
+
 
