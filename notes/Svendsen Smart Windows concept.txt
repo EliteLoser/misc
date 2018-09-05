@@ -30,4 +30,4 @@ By default, windows will automatically close if rain is detected by sensors (com
  
 Have windows and/or doors (specific or all) close when temperature reaches a certain level.
  
-
+Custom automation routines with a high degree of IFTTT support.
