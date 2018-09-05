@@ -8,6 +8,8 @@ Smart dog/cat door that recognizes a face/animal/eyes similarly to how iPhone X 
 
 Metal and plastic only, not wood, for standing weather.
 
+Security, security, and then some more security. Two factor auth for initial setup or other very strict and precise coupling mechanisms digitally, somehow. Integrate with Microsoft/Apple/Google/Other logons?
+
 Lifetime should be up to 30 years, "almost guaranteed".
 
 Movement of the window/door/other should be sturdy, steady and "pleasant" - not twitchy and jerky.
