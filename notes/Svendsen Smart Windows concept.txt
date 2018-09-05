@@ -24,7 +24,7 @@ Farther into the future maybe a fully artificial window of transparent liquid cr
 
 Voice control is a must. Apple HomeKit and Google/Android and potentially other integrations. Form a standard? Get the main players supported (Android/iOS/Windows (Cortana)…?).
 
-By default, windows will automatically close if rain is detected by sensors (combine both visual and water detection sensors? Humidity? Hail? Snow?). Can set exceptions.
+By default, windows will automatically close if rain is detected by sensors. Combine both visual and water detection sensors? Humidity? Hail? Snow? Must be able to set exceptions. Close to a certain angle only if snow is detected, other if rain? Heavy rain vs. light rain (estimate as best as sensors allow)?
 
 Have windows and/or doors (specific or all) close when temperature reaches a certain level. Conditionally open windows if temperature outside is lower than inside, combined with inside temperature going above a threshold value, etc.
 
