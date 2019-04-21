@@ -4,10 +4,12 @@ Param(
         $WhatIf = $True
     )
 
+# To use and not just test: Pass in -WhatIf:$False
+
 $FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\IMAG????.jpg"
 
 foreach ($File in $FilesToMoveAndRename) {
-    $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd'))_Android-$($File.Name)"
+    $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\-HHmmss'))_Android-$($File.Name)"
     $Year = $File.LastWriteTime.Year
     $Month = $File.LastWriteTime.Month
     $File | Rename-Item -NewName { "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$NewName" } -WhatIf:$WhatIf -Verbose
