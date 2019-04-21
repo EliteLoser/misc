@@ -11,8 +11,8 @@ foreach ($File in $FilesToMoveAndRename) {
     $Year = $File.LastWriteTime.Year
     $Month = $File.LastWriteTime.Month
     $File | Rename-Item -NewName { "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$NewName" } -WhatIf:$WhatIf -Verbose
-    Write-Verbose -Verbose "Sleeping for two seconds to let the file get renamed properly..."
-    Start-Sleep -Seconds 2
+    Write-Verbose -Verbose "Sleeping for a few milliseconds to let the file get renamed properly..."
+    Start-Sleep -Milliseconds 25
     Move-Item -LiteralPath $(if ($WhatIf) {
         $File.FullName
     } else {
