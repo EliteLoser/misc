@@ -6,7 +6,9 @@ Param(
 
 # To use and not just test: Pass in -WhatIf:$False
 
-$FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\IMAG????.jpg"
+# Get Android files as by default naming convention on my phone per 2019-04-21. Easter Sunday. Include "-EFFECTS" in the name.
+$FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\IMAG*.jpg" |
+    Where-Object { $_.Name -match '^IMAG\d{4}(?:-EFFECTS)?\.jpg' }
 
 foreach ($File in $FilesToMoveAndRename) {
     
