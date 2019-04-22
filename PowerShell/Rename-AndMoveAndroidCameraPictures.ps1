@@ -23,17 +23,19 @@ foreach ($File in $FilesToMoveAndRename) {
     Write-Verbose -Verbose "Sleeping for a few milliseconds to let the file get renamed properly..."
     Start-Sleep -Milliseconds 25
     
+    $DestinationPath = "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$Year\$("{0:D2}" -f $Month)"
+
     # Ensure the destination directory exists by creating it if it's missing.
-    if (-not (Test-Path -LiteralPath "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$Year\$("{0:D2}" -f $Month)" -PathType Container)) {
+    if (-not (Test-Path -LiteralPath $DestinationPath -PathType Container)) {
         # Harmless if it exists as well.
-        New-Item -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$Year\$("{0:D2}" -f $Month)" -ItemType Directory -Force
+        New-Item -Path $DestinationPath -ItemType Directory -Force
     }
 
     Move-Item -LiteralPath $(if ($WhatIf) {
         $File.FullName
     } else {
         "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$NewName"
-    }) -Destination "$Env:UserProfile\OneDrive\Pictures\Camera Roll\$Year\$("{0:D2}" -f $Month)" -WhatIf:$WhatIf -Verbose
+    }) -Destination $DestinationPath -WhatIf:$WhatIf -Verbose
     
 }
 
