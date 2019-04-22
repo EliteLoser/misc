@@ -7,8 +7,8 @@ Param(
 # To use and not just test: Pass in -WhatIf:$False
 
 # Get Android files as by default naming convention on my phone per 2019-04-21. Easter Sunday. Include "-EFFECTS" in the name.
-$FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\IMAG*.jpg" |
-    Where-Object { $_.Name -match '^IMAG\d{4}(?:-EFFECTS)?\.jpe?g$' }
+$FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\*.*" |
+    Where-Object { $_.Name -match '^(?:VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:jpe?g|mp4)$' }
 
 foreach ($File in $FilesToMoveAndRename) {
     
