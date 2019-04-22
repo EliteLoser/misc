@@ -12,7 +12,7 @@ $FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\
 
 foreach ($File in $FilesToMoveAndRename) {
     
-    $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\-HHmmss'))_Android-$($File.Name)"
+    $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android-$($File.Name)"
 
     $Year = $File.LastWriteTime.Year
     $Month = $File.LastWriteTime.Month
