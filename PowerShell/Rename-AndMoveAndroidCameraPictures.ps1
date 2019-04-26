@@ -8,11 +8,16 @@ Param(
 
 # Get Android files as by default naming convention on my phone per 2019-04-21. Easter Sunday. Include "-EFFECTS" in the name.
 $FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\*.*" |
-    Where-Object { $_.Name -match '^(?:VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:jpe?g|mp4)$' }
+    Where-Object { $_.Name -match '^(?:Screenshot_\d+-\d+|VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:png|jpe?g|mp4)$' }
 
 foreach ($File in $FilesToMoveAndRename) {
     
-    $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android-$($File.Name)"
+    if ($File.Name -like 'Screenshot_[0-9]*') {
+        $NewName = $File.Name -replace '^Screenshot_', 'Screenshot_Android_'
+    }
+    else {
+        $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android-$($File.Name)"
+    }
 
     $Year = $File.LastWriteTime.Year
     $Month = $File.LastWriteTime.Month
