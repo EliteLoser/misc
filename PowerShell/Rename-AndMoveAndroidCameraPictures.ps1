@@ -6,14 +6,19 @@ Param(
 
 # To use and not just test: Pass in -WhatIf:$False
 
-# Get Android files as by default naming convention on my phone per 2019-04-21. Easter Sunday. Include "-EFFECTS" in the name.
+# Get Android files as by default naming convention on my HTC U11+ phone per 2019-04-21. Include "-EFFECTS" in the name
+# to support Picasa/Google AI manipulated images. 2019-05-21: Got a Nokia 7.1 with a different naming convention, so I'm
+# adding support for names like "{IMG,VID}_<DATE>_<TIME>.{jpe?g,mp4}" as well.
 $FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\*.*" |
-    Where-Object { $_.Name -match '^(?:Screenshot_\d+-\d+|VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:png|jpe?g|mp4)$' }
+    Where-Object { $_.Name -match '^(?:(?:VID|IMG)_\d+_\d*|\d+_\d*|Screenshot_\d+[\-_]\d+|VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:png|jpe?g|mp4)$' }
 
 foreach ($File in $FilesToMoveAndRename) {
     
     if ($File.Name -like 'Screenshot_[0-9]*') {
         $NewName = $File.Name -replace '^Screenshot_', 'Screenshot_Android_'
+    }
+    elseif ($File.Name -match '^(?:IMG|VID)_') {
+        $NewName = $File.Name -replace '^(IMG|VID)_(\d+)(.+)', '${2}_${1}_Android${3}'
     }
     else {
         $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android-$($File.Name)"
