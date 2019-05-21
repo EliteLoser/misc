@@ -10,7 +10,7 @@ Param(
 # to support Picasa/Google AI manipulated images. 2019-05-21: Got a Nokia 7.1 with a different naming convention, so I'm
 # adding support for names like "{IMG,VID}_<DATE>_<TIME>.{jpe?g,mp4}" as well.
 $FilesToMoveAndRename = Get-ChildItem -Path "$Env:UserProfile\OneDrive\Pictures\Camera Roll\*.*" |
-    Where-Object { $_.Name -match '^(?:(?:VID|IMG)_\d+_\d*|Screenshot_\d+[\-_]\d+|VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:png|jpe?g|mp4)$' }
+    Where-Object { $_.Name -match '^(?:received_\d+|(?:VID|IMG)_\d+_\d*|Screenshot_\d+[\-_]\d+|VIDEO|IMAG)\d{4}(?:-EFFECTS)?\.(?:png|jpe?g|mp4)$' }
 
 foreach ($File in $FilesToMoveAndRename) {
     
@@ -19,6 +19,9 @@ foreach ($File in $FilesToMoveAndRename) {
     }
     elseif ($File.Name -match '^(?:IMG|VID)_') {
         $NewName = $File.Name -replace '^(IMG|VID)_(\d+)(.+)', '${2}_${1}_Android${3}'
+    }
+    elseif ($File.Name -match '^received_\d{4,}') {
+        $NewName = $File.Name -replace '^', "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android_"
     }
     else {
         $NewName = "$($File.LastWriteTime.ToString('yyyyMMdd\_HHmmss'))_Android-$($File.Name)"
