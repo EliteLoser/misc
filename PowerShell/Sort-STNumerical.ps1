@@ -35,7 +35,7 @@
         [Parameter(
             Mandatory = $True,
             ValueFromPipeline = $True,
-            ValueFromPipelineBypropertyName = $True)]
+            ValueFromPipelineByPropertyName = $True)]
         [System.Object[]]
         $InputObject,
         
