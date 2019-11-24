@@ -1,17 +1,20 @@
 #requires -version 3
+
+
+
 function Show-AppleUpdates {
     [CmdletBinding()]
-    Param()
+    Param([System.String] $CacheFile = "$PSScriptRoot\previous-apple-check.txt",
+        [System.String] $AppleSupportSecurityFixesUri = "https://support.apple.com/en-us/HT201222")
     Begin {
+        
         $ErrorActionPreference = "Stop"
-        $CacheFile = "$PSScriptRoot\previous-apple-check.txt"
+        
     }
     Process {
         
         # I really wonder why I (thought I?) had to do it the way I did it.        
         # Author: Joakim Borger Svendsen. 2019-11-24.
-
-        $AppleSupportSecurityFixesUri = "https://support.apple.com/en-us/HT201222"
 
         $WebContent = Invoke-WebRequest -UseBasicParsing -Uri $AppleSupportSecurityFixesUri
 
@@ -34,8 +37,9 @@ function Show-AppleUpdates {
 
         # Just a crude caching mechanism and comparison.
         if (Test-Path -LiteralPath $CacheFile) {
-            if ((Get-Content -LiteralPath $CacheFile).Trim() -ne $Updates.Trim()) {
-                Write-Warning "A new update is out for at least one product since the last check!"
+            if ((@(Get-Content -LiteralPath $CacheFile) -join "`n").Trim() -ne ($Updates -join "`n").Trim()) {
+                Write-Warning "A new update is out for at least one product since the last check on $(
+                    (Get-Item -LiteralPath $CacheFile).LastWriteTimeUtc.ToString('yyyy\-MM\-dd HH\:mm\:ss'))!"
             }
         }
         
@@ -43,8 +47,10 @@ function Show-AppleUpdates {
 
     }
     End {
+        
         # Part of the (simple) caching mechanism.
         $Updates | Set-Content -LiteralPath $CacheFile
+
     }
 
 }
