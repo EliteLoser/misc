@@ -12,4 +12,4 @@ This would stimulate such psychology as “I’m so lazy today, can you do 1000 
 Both are either declared winners or not at the end.
 You could make it so that each day has a goal of 100 % and you can reach 200 % (same as Apple Watch today), so one day where “both fail” doesn’t cause you to lose the ability to catch up on that n-day period (7, a week, seems reasonable).
 
-Joakim Borger Svendsen
+Joakim Borger Svendsen, Copyright 2020-01-12 to present
