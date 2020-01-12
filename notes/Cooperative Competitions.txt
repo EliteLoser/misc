@@ -10,6 +10,6 @@ These competitions – I will base my example mostly on the Apple Watch competit
 Instead you could make a cooperative competition where you each contribute to reach a shared goal. 
 This would stimulate such psychology as “I’m so lazy today, can you do 1000 extra steps? Haha”. I can’t imagine the ultimate ramifications or diversity that can be implemented, but the basic idea is simply working together to reach a common goal.
 Both are either declared winners or not at the end.
+You could make it so that each day has a goal of 100 % and you can reach 200 % (same as Apple Watch today), so one day where “both fail” doesn’t cause you to lose the ability to catch up on that n-day period (7, a week, seems reasonable).
 
 Joakim Borger Svendsen
-Svendsen Tech
