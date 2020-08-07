@@ -15,10 +15,12 @@ What I realized at age 12 or whatever was that while you swallow, you cannot hic
 because it needs several attempts to manifest as a realization, I don't remember how, but I realized that when you swallow, you simply cannot hiccup, and
 if you suppress 1-3 hiccups, it will pass. If not, 1-5 will surely do it (breathe between and repeat).
 
+One of the tips I read was something to the effect of "swallow three times fast", but this is hard to do without a beverage, so: 
 To achieve this effect, it will actually depend on your "swallowing technique". If you create a (relative) vacuum between your mouth and
 the liquid in a large glass
 of water, or whatever container that is easy to "drink fast from", you can achieve a more rapid swallowing speed than if you take in air between each swallow
-(also more intestinal gases later with air and incidentally "more sound"). This is sort of besides the point.
+(also more intestinal gases later with air and incidentally "more sound" when swallowing, a "gulp", while the vacuum method
+is almost without sound). This is sort of besides the point.
 
 Carbonated drinks will NOT work! Not sparkling water.
 
