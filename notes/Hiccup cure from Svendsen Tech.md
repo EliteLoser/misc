@@ -7,7 +7,7 @@ the age of 12 is my feeling.
 Anyway, if by some mishap you're here looking for a hiccup cure, or just satisfying 
 some borderline perverse curiosity, I will describe a hiccup cure that works for me 100 %. It never, ever fails. Trusted for decades now.
 (I remember forgetting about it once when I was very drunk and in public - a gas station attendant heard me rave about it and gave me sugar cubes,
-one of the tips that never worked for me ... Actually quite often for a few years my wild trips out on town would end with
+one of the tips that never worked for me ... Actually, quite often for a few years my wild trips out on town would end with
 me getting the hiccups and forgetting the cure... Probably just as well. And that belongs to my past, not the present and presumably not the future.)
 
 What I realized at age 12 or whatever was that while you swallow, you cannot hiccup. I had read advice saying to use sugar, getting scared, drinking water
