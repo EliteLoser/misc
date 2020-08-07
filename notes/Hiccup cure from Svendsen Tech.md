@@ -27,7 +27,7 @@ Carbonated drinks will NOT work! Not sparkling water.
 To put it on the brink: If you get the hiccups, get a 0.5 L or larger glass of water and then take a deep breath when you have just had a hiccup and then 
 drink as fast as you can as if your life depended on it (partly your sanity does...), try to avoid breathing for as long as you can and keep swallowing as
 fast as you can. If needed or intuitively felt (in my case anyway), take a breath and repeat the process of swallowing until at least 1-5 hiccups have
-been suppressed. Once you finish this process, you will, if your body is as mine, find yourself having cured the hiccup. This can easily be repeated (but
+been suppressed. Once you finish this process, you will, if your body is as mine, find yourself having cured the hiccups. This can easily be repeated (but
 might disturb your sleep if you drink a lot of water close to bedtime!).
 
 Be well.
