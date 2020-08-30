@@ -12,7 +12,7 @@ conducted by NTNU, a Norwegian university. The study is based on tens of thousan
 scientifically and statistically - you might even say "great value". It's likely one of the best indicators we currently have.
 
 
-Now to the concerns. In short: '''Differences in the measuring equipment.'''
+Now to the concerns. In short: Differences in the measuring equipment.
 
 
 I have anecdotal evidence in the form of my experiences combined with the degree of capacity for reasoning required to assess (not saying it's difficult). 
@@ -42,6 +42,6 @@ might contact NTNU about it and maybe suggest a "disclaimer" or similar, althoug
 absolute accuracy and reliability).
 
 
-I should include some links to NTNU's PAI pages... Found one here: https://www.ntnu.no/cerg/personal-activity-intelligence 
-
+English link: https://www.ntnu.edu/cerg/personal-activity-intelligence 
+Native language (Norwegian) link: https://www.ntnu.no/cerg/personal-activity-intelligence 
 
