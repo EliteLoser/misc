@@ -8,7 +8,7 @@ Intelligence, a method for measuring fitness age and how much your heart works d
 
 
 The study boasts that it is scientifically validated and it was
-conducted by NTNU, a Norwegian university. The study is based on tens of thousands of people over the course of decades, so it has quite a bit of value
+conducted by NTNU, a Norwegian university. The study is based on thousands of people over the course of decades, so it has quite a bit of value
 scientifically and statistically - you might even say "great value". It's likely one of the best indicators we currently have.
 
 
