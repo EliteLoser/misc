@@ -33,7 +33,7 @@ project (incidentally a member of PAI Health Norway...) that their study uses _d
 This was actually unclear to me after perusing their documentation. This reduces the value significantly, but the differences between measurement equipment
 remains as a concern. If we fast forward 100 years, PAI participants today will have contributed to the data set with different (known) kind of wearables.
 At that time, and of course quite a bit sooner, the research will have more value. Still not a bad idea, but accuracy in algorithms to derive based on
-the inevitable somewhat inaccurately reported exercise intensity and duration becomes much less reliable than if my assumption that they used wearables
+the inevitably somewhat inaccurately reported exercise intensity and duration becomes much less reliable than if my assumption that they used wearables
 already back then (I was wondering how they could be _that_ forward-thinking in the 80's).
 
 
