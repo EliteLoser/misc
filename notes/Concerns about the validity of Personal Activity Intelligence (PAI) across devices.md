@@ -31,7 +31,7 @@ This is then easily generalized, and the concern that is introduced is how the k
 Fitbit, Garmin, Apple Watch, or whichever piece of equipment you use to measure now, works. I contacted NTNU and was told by a spokesperson for the
 project (incidentally a member of PAI Health Norway...) that their study uses _derived_ heart rate values based on _reported_ intensity of workouts.
 This was actually unclear to me after perusing their documentation. This reduces the value significantly, but the differences between measurement equipment
-remains as a concern. If we fast forward 100 years, PAI participants today will have contributed to the data set with different (known) kind of wearables.
+remains as a concern. If we fast forward 100 years, PAI participants today will have contributed to the data set with different (known) kinds of wearables.
 At that time, and of course quite a bit sooner, the research will have more value. Still not a bad idea, but accuracy in algorithms to derive based on
 the inevitably somewhat inaccurately reported exercise intensity and duration becomes much less reliable than if my assumption that they used wearables
 already back then (I was wondering how they could be _that_ forward-thinking in the 80's).
