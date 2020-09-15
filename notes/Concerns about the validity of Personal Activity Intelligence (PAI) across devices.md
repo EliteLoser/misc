@@ -34,7 +34,7 @@ This was actually unclear to me after perusing their documentation. This reduces
 remains as a concern. If we fast forward 100 years, PAI participants today will have contributed to the data set with different (known) kinds of wearables.
 At that time, and of course quite a bit sooner, the research will have more value. Still not a bad idea, but accuracy in algorithms to derive based on
 the inevitably somewhat inaccurately reported exercise intensity and duration becomes much less reliable than if my assumption that they used wearables
-already back then (I was wondering how they could be _that_ forward-thinking in the 80's).
+already back then was true (I was wondering how they could be _that_ forward-thinking in the 80's).
 
 
 I estimate that if I connected the Apple Watch to PAI instead
