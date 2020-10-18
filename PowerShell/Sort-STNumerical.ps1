@@ -34,16 +34,18 @@ function Sort-STNumerical {
             Sort numbers in a human-friendly way.
 
         .EXAMPLE
-            @("1.1.0","1.1.11","1.1.2") | Sort-STNumerical -Descending
+            @("1.1.0", "1.1.11", "1.1.2") | Sort-STNumerical -Descending
 
-            1.1.11, 1.1.2, 1.1.0
+            1.1.11
+            1.1.2
+            1.1.0
     #>
     [CmdletBinding()]
     Param(
         [Parameter(
             Mandatory = $True,
             ValueFromPipeline = $True,
-            ValueFromPipelineBypropertyName = $True)]
+            ValueFromPipelineByPropertyName = $True)]
         [System.Object[]]
         $InputObject,
         
@@ -57,9 +59,9 @@ function Sort-STNumerical {
     Begin {
         [System.Object[]] $InnerInputObject = @()
         
-        [bool]$desc = $false
+        [Bool] $SortDescending = $False
         if($Descending){
-            $desc = $true
+            $SortDescending = $True
         }
     }
     
@@ -75,6 +77,6 @@ function Sort-STNumerical {
                         "{0:D$MaximumDigitCount}" -f [Int64] $Args[0].Value })
                     }
                 },
-                @{ Expression = { $_ } } -Descending:$desc
+                @{ Expression = { $_ } } -Descending:$SortDescending
     }
 }
