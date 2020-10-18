@@ -60,7 +60,7 @@ function Sort-STNumerical {
         [System.Object[]] $InnerInputObject = @()
         
         [Bool] $SortDescending = $False
-        if($Descending){
+        if ($Descending) {
             $SortDescending = $True
         }
     }
