@@ -5,11 +5,11 @@ $Path = './adsense report2.csv'
 $CsvData = @(Import-Csv -LiteralPath $Path)
 
 # Add recent data.
-$LastDate = [DateTime]($CsvData[-1].Dato)
+$LastDate = [DateTime]$CsvData[-1].Dato
 Write-Verbose "Last date in main report: $LastDate" -Verbose
 
 if (Test-Path -LiteralPath ($Path = './adsense-new.csv')) {
-    $CsvData += @(Import-Csv -LiteralPath $Path).Where({([DateTime] $_.Dato) -gt $LastDate}) |
+    $CsvData += @(Import-Csv -LiteralPath $Path).Where({[DateTime] $_.Dato -gt $LastDate}) |
         Sort-Object -Descending
 }
 
