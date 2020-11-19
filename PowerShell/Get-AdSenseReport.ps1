@@ -21,7 +21,8 @@ $CsvDataFormatted = $CsvData |
     ForEach-Object {
         Add-Member -InputObject $_ -MemberType NoteProperty -Name Dato -Value ([DateTime]$_.Dato) -Force
         Add-Member -InputObject $_ -MemberType NoteProperty -Name Year -Value $_.Dato.Year -Force
-        Add-Member -InputObject $_ -MemberType NoteProperty -Name YearAndMonth -Value ([String]$_.Dato.Year + "-" + ("{0:D2}" -f $_.Dato.Month)) -Force
+        Add-Member -InputObject $_ -MemberType NoteProperty `
+            -Name YearAndMonth -Value ([String]$_.Dato.Year + "-" + ("{0:D2}" -f $_.Dato.Month)) -Force
         Add-Member -InputObject $_ -MemberType NoteProperty `
             -Name Income -Value ([Decimal]$_."Anslåtte inntekter (NOK)" -replace ',', '.') -Force -PassThru
     } |
