@@ -27,3 +27,6 @@ having a broken nose that's the rush for the hackers.
 
 Btw, I am not a hacker.
 
+When I was 15 I was an avid spokesperson against smoking and hated the smell of smoke.
+
+When I was 19, I started smoking.
