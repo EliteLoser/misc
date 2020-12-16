@@ -8,7 +8,7 @@ if ($PSVersionTable.Version.Major -gt 5 -and -not $IsWindows) {
 Invoke-Command -ComputerName $Servers -ScriptBlock {
     $CanReachWeb = if (((Invoke-WebRequest -UseBasicParsing -Uri 'http://microsoft.com') |
         Select-Object -ExpandProperty Links |
-        Select-Object -ExpandProperty href) -match 'https://choice.microsoft.com') { 
+        Select-Object -ExpandProperty href) -match 'https://choice\.microsoft\.com') { 
             $True
         } else { 
             $False
