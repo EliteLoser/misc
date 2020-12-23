@@ -1,7 +1,3 @@
-if ($PSVersionTable.Version.Major -gt 5 -and -not $IsWindows) {
-    Write-Error "Only works on Windows." -ErrorAction Stop
-}
-
 # You need to populate this with remote IPs or host names
 # $Servers = @('server1', 'server2')
 
@@ -25,4 +21,4 @@ Invoke-Command -ComputerName $Servers -ScriptBlock {
             Select-Object -ExpandProperty Domain -ErrorAction SilentlyContinue
         CanReachWeb = $CanReachWeb
     }
-}
+} | Select-Object -Property ComputerName, Domain, CanReachWeb
