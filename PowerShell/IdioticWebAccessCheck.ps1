@@ -11,7 +11,7 @@ Invoke-Command -ComputerName $Servers -ScriptBlock {
             Select-Object -ExpandProperty Links |
             Select-Object -ExpandProperty href) -match 'https://choice\.microsoft\.com')) { 
                 $True
-            }
+        }
         else { 
             $False
         }
