@@ -23,7 +23,7 @@ the ticket/incident/inquiry. People are measured on deadlines on low-level tasks
 in my experience and opinion, simply because of "metrics", something otherwise highlighted as exclusively positive (for maximum financial gain). I would like
 to mention Paul Collier's writing again in "The future of capitalism: Facing the new anxieties" and say that we need both governments and the free market, but
 the market has to be run and based on principles of sound ethics instead of simply "maximizing profits", referred to as "utilitarian obsession with increased
-consumption", seen in examples familiar to me, such as with Statoil/Equinor and their "conquer the US" effort (a complete failure, 20 billion NOK wasted). Equinor,
+consumption", seen in examples familiar to me, such as with Statoil/Equinor and their "conquer the US" effort (a complete failure, 200 billion NOK wasted). Equinor,
 then Statoil, was focused on "exponential growth", something we today mostly associate with crypto currencies, I guess. It is not very realistic.
 
 Some words come to mind: "Infinite growth in a closed system". That "system" is our planet, Earth. We need to balance it out. Fortunately a lot of forces are,
