@@ -1,6 +1,6 @@
 # Lean Operations
 
-I am an official white belt Lean guy... That said, the downsides I see are that stocks can run out because supply and demand is supposed to meet each
+I am an official white belt Lean guy... That said, the downsides I see are that stocks can run out because supply and demand are supposed to meet each
 other exactly and this causes "low local storage" (except for in China, or actually there too: build and ship ASAP...). This has some downsides with regards
 to stability and a concept I'm a huge fan of: robustness. I don't know if that's even a word, I have no squiggly lines to indicate it here on Github, but
 the concept of being "robust" is as I see it vital for any business or facility providing services to others.
