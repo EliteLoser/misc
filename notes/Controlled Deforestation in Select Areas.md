@@ -2,7 +2,7 @@
 
 When I heard about forest fires in California (seems like a regular annual event at this point), I thought about what a waste it is when all that usable wood
 just burns up in the air (and so pollutes). Some context: 
-I am a strong believer in sustainable forests and sustainable harvesting of lumber (in fact, make _everything_ sustainable (almost)). As a kid 
+I am a strong believer in sustainable forests and sustainable harvesting of lumber (in fact, make _everything_ sustainable, except bad things). As a kid 
 I planted a tree, as part of a sustainable forest project, that I was told would be big in about 30
 years. Something which in my 7-or-so-year-old ears sounded almost pointless, being so far into the future. Now, at age 42, I could have traveled 
 to that spot to maybe see
