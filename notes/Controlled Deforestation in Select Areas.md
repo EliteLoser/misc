@@ -20,7 +20,7 @@ repeatedly make what is plainly and simply _wrong choices_ ethically/morally. Th
 while the entire world suffers, potentially for decades, 
 in the wake of these horrific decisions. Please stop burning down rainforests in non-sustainable ways. A memory of the fires in Indonesia come to mind, I forgot
 the details, but that did lasting damage. There will undoubtedly be more scandalous behavior, but I'm putting a small voice to 
-the opposite opinions. '''Sustainability''' is 
+the opposite opinions. __Sustainability__ is 
 one of my favorite words. It means so much, and is such a source of comfort and peace for all, when practiced well. The benefits are practically endless.
 
 I keep digressing, so I will return to what I wanted to say in this text: Consider controlled deforestation of areas exposed to forest fire danger. I don't
