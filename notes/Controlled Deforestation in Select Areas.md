@@ -26,7 +26,8 @@ one of my favorite words. It means so much, and is such a source of comfort and 
 I keep digressing, so I will return to what I wanted to say in this text: Consider controlled deforestation of areas exposed to forest fire danger. I don't
 mean 100 % deforestation, but building "fire streets" of a sufficient, scientifically determined, width and length to prevent fires from spreading. I believe
 this might not be a completely novel idea, but I have not heard much about it, so I'm making this note for the world to consume.
-_The gains are that the lumber can be used for industrial/other purposes, there will be less pollution, and less danger to people and property_. Overall,
+_The gains are that the lumber can be used for industrial/other purposes, there will be less pollution, and less danger and
+destruction to people and property_. Overall,
 it is simply logically superior to letting it burn uncontrolled. I envisage things like firefighters radio communcating about "quadrant west D4
 has caught fire, it will spread as far as fire street west Z13 within hours, and should then stop there, as
 far as fire street Z25 east and stop there ... affected homes are in region bla bla ...". Imagine
