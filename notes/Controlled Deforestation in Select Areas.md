@@ -44,6 +44,11 @@ Having read Paul Collier's
 words about the tremendous prosperity, combined with sound ethics and logic, made from post-WW2, 1945-1970, makes me believe there 
 is hope, if we can only return to pragmatism, as Paul suggests very eloquently in his book (The Future of Capitalism: Facing the New Anxieties - do read).
 
-Did that convey what I had in mind? I get no feedback or review, it's just me here, so I will post this now.
+Did that convey what I had in mind? I get no feedback or review, it's just me here, so I will post this now. Edit: I posted on Facebook and actually 
+got a comment. It was 
+about potential "desert growth/development" in the deforested areas. This is a valid concern and should be acknowledged and accounted for somehow. I cannot
+guide further based on my current information available. However, I do predict it will be "worth it" to have some desert zones. In an ideal world you could
+imagine watering the desert zones and/or using it as farmland.
+
 
 Be nice.
