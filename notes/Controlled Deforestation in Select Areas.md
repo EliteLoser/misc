@@ -50,5 +50,13 @@ about potential "desert growth/development" in the deforested areas. This is a v
 guide further based on my currently available information. However, I do predict it will be "worth it" to have some desert zones. In an ideal world you could
 imagine watering the desert zones and/or using it as farmland.
 
+2021-07-26: Another edit. I was told selective deforestation is already being done for this purpose, as often I'm late to the debate.
+Adding some comments about concerns about animal life. This is also a valid concern. The thing is that their habitat/home area is
+destroyed regardless in a fire. Slow, planned fire streets would at least give the animals a chance to migrate - and not in such a hurry.
+
+Another issue raised is that fires can "jump" across barriers quite far due to wind (an example of a small lake being crossed was brought up).
+It still seems like a good idea to me, and the width/length of the
+fire streets will be a trafe-off between estimated wind speeds, weight of burning/hot material and how far they are likely to reach. It will not be perfect,
+but nothing ever is. Still think it seems like a good idea.
 
 Be nice.
