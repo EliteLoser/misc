@@ -18,7 +18,7 @@ got translated into law texts/regulation. Sense usually wins in the end, but it 
 tendency to, and penchant for, pursuing greed is downright scandalous when human history is reviewed (the present will be reviewed as history later). People
 repeatedly make what is plainly and simply _wrong choices_ ethically/morally. The motivation is often short-term riches for a few select individuals 
 while the entire world suffers, potentially for decades, 
-in the wake of these horrific decisions. Please stop burning down rainforests in non-sustainable ways. A memory of the fires in Indonesia come to mind, I forgot
+in the wake of these horrific decisions. Please stop burning down rainforests in non-sustainable ways. A memory of the fires in Indonesia comes to mind, I forgot
 the details, but that did lasting damage. There will undoubtedly be more scandalous behavior, but I'm putting a small voice to 
 the opposite opinions. __Sustainability__ is 
 one of my favorite words. It means so much, and is such a source of comfort and peace for all, when practiced well. The benefits are practically endless.
