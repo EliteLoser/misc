@@ -20,7 +20,7 @@ To achieve this effect, it will actually depend on your "swallowing technique". 
 the liquid in a large glass
 of water, or whatever container that is easy to "drink fast from", you can achieve a more rapid swallowing speed than if you take in air between each swallow
 (also more intestinal gases later with air and incidentally "more sound" when swallowing, a "gulp", while the vacuum method
-is almost without sound). This is sort of besides the point.
+is almost without sound). This is sort of beside the point.
 
 Carbonated drinks will NOT work! Not sparkling water.
 
