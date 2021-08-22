@@ -7,7 +7,7 @@ Port of this Python code to PowerShell. Apparently this is an algorithm for vali
 
 Joakim Borger Svendsen, 2021-August
 
-Dot-source (. \Test-SSN.ps1; Test-SSN -SSN '01234567890') and use the function Test-SSN
+Dot-source (. .\Test-SSN.ps1; Test-SSN -SSN '01234567890') and use the function Test-SSN
 to validate Norwegian social security numbers (personnummer/fødselsnummer).
 
 Will return a custom PowerShell object with an SSN property containing the SSN as a string
