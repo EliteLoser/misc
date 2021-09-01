@@ -3,6 +3,7 @@ Initially written 2021-09-01.
 I just wanted to quickly share a thought that occurred to me about why people were consistently so wrong when answering Hans Rosling's
 fact question about the world. Significantly worse than random, as readers
 of the book "Factfulness" are well aware. This note is for people who read the book or are familiar with the content; otherwise it has no or little meaning...
+Plus it's pretty much a spoiler of the intro!
 
 I caught myself, in the beginning of the book, when being tested on the fact questions, thinking "this is a trap, it's probably better than I think, otherwise,
 why am I reading this book?". That might be why 
