@@ -1,0 +1,21 @@
+Svendsen Tech Cooperative Competitions Concept
+
+Concept invented and initial draft of idea created 2020-01-11 and 2020-01-12.
+
+Name suggestion: Copcomp.
+
+Description:
+
+Many smart watches such as Fitbit and Apple Watch offer competitions (pardon favoritism, it’s the ones I use myself, one on each wrist).
+
+These competitions – I will base my example mostly on the Apple Watch competition design – are usually precisely competitive and declare a winner at the end. On the Apple Watch you compete for seven days after the day the person who is challenged accepts, for the most calories burned relative to your own individual goal (I would likely keep it similarly flexible), stand hours relative to a fixed number in the day and exercise minutes relative to a fixed number in a day (0-60 award points – 30 is 100 %).
+
+Instead you could make a cooperative competition where you each contribute to reach a shared goal. 
+
+This would stimulate such psychology as “I’m so lazy today, can you do 1000 extra steps? Haha”. I can’t imagine the ultimate ramifications or diversity that can be implemented, but the basic idea is simply working together to reach a common goal.
+
+Both are either declared winners or not at the end.
+
+You could make it so that each day has a goal of 100 % and you can reach 200 % (same as Apple Watch today), so one day where “both fail” doesn’t cause you to lose the ability to catch up on that n-day period (7, a week, seems reasonable).
+
+Joakim Borger Svendsen, Copyright 2020-01-12 to present
