@@ -44,7 +44,7 @@ $Runspaces = @()
 $ScriptBlock = {
     
     Param([String] $ComputerName)
-
+    
     $Ping = Test-Connection -ComputerName $ComputerName -Quiet
     
     <#
@@ -62,13 +62,16 @@ $ScriptBlock = {
 }
 
 $Runspaces = @(foreach ($Computer in $ComputerName) {
+    
     $PowerShellInstance = [System.Management.Automation.PowerShell]::Create().AddScript($ScriptBlock)
     $PowerShellInstance.RunspacePool = $RunspacePool
     $PowerShellInstance.AddParameter('ComputerName', $Computer)
+    
     # This is "returned"/passed down the pipeline and collected outside the foreach loop
     # in the variable $Runspaces, an array. To avoid array concatenation (slow when the
     # array is large).
     $PowerShellInstance.BeginInvoke()
+
 })
 
 $WaitStartTime = Get-Date
