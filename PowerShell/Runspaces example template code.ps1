@@ -44,7 +44,7 @@ $Runspaces = @()
 $ScriptBlock = {
     
     Param([String] $ComputerName)
-    
+
     $Ping = Test-Connection -ComputerName $ComputerName -Quiet
     
     <#
@@ -55,8 +55,10 @@ $ScriptBlock = {
     #>
 
     $Data.$ComputerName = [PSCustomObject]@{
+
         Ping = $Ping
         TimeFinished = [DateTime]::Now
+        
     }
 
 }
