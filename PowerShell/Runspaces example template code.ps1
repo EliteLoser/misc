@@ -58,7 +58,7 @@ $ScriptBlock = {
 
         Ping = $Ping
         TimeFinished = [DateTime]::Now
-        
+
     }
 
 }
@@ -78,7 +78,7 @@ $Runspaces = @(foreach ($Computer in $ComputerName) {
 
 $WaitStartTime = Get-Date
 
-while ($true) {
+while ($True) {
 
     if (($TotalWaitedSeconds = ([DateTime]::Now - $WaitStartTime).TotalSeconds) -gt $MaximumWaitTimeSeconds) {
         
