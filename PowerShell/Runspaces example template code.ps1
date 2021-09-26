@@ -84,12 +84,8 @@ while ($true) {
     
     if ($Runspaces.IsCompleted -contains $False) {
         
-        if ([System.Math]::Floor($TotalWaitedSeconds) % 10 -eq 0) {
-
-            $UnfinishedThreadCount = @($Runspaces.Where({$False -eq $_.IsCompleted})).Count
-            Write-Verbose -Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f $TotalWaitedSeconds) seconds."
-        
-        }
+        $UnfinishedThreadCount = @($Runspaces.Where({$False -eq $_.IsCompleted})).Count
+        Write-Verbose -Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f $TotalWaitedSeconds) seconds."
         
         Start-Sleep -Milliseconds 250
     
