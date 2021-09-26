@@ -72,17 +72,30 @@ $WaitStartTime = Get-Date
 
 while ($true) {
 
-    if (([DateTime]::Now - $WaitStartTime).TotalSeconds -gt $MaximumWaitTimeSeconds) {
+    if (($TotalWaitedSeconds = ([DateTime]::Now - $WaitStartTime).TotalSeconds) -gt $MaximumWaitTimeSeconds) {
         Write-Verbose -Verbose "Timeout of $MaximumWaitTimeSeconds reached."
         break
     }
     
     if ($Runspaces.IsCompleted -contains $False) {
-        Start-Sleep -Milliseconds 100
+        
+        if ([System.Math]::Floor($TotalWaitedSeconds) % 10 -eq 0) {
+
+            $UnfinishedThreadCount = @($Runspaces.Where({$False -eq $_.IsCompleted})).Count
+            Write-Verbose -Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f $TotalWaitedSeconds) seconds."
+        
+        }
+        
+        Start-Sleep -Milliseconds 250
+    
     }
     else {
         Write-Verbose -Verbose "Threads finished."
         $RunspacePool.Close()
+        # Return the hashtable with results.
+        $Data
+
+        # Exit the infinite loop.
         break
     }
 
@@ -92,5 +105,3 @@ $EndTime = Get-Date
 Write-Verbose -Verbose "[$($EndTime.ToString('yyyy\-MM\-dd HH\:mm\:ss'))] Script finished."
 Write-Verbose -Verbose "Total minutes elapsed: $('{0:N5}' -f ($EndTime - $StartTime).TotalMinutes)"
 
-# Return the hashtable with results.
-return $Data
