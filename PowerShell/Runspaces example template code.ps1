@@ -73,8 +73,13 @@ $WaitStartTime = Get-Date
 while ($true) {
 
     if (($TotalWaitedSeconds = ([DateTime]::Now - $WaitStartTime).TotalSeconds) -gt $MaximumWaitTimeSeconds) {
+        
         Write-Verbose -Verbose "Timeout of $MaximumWaitTimeSeconds reached."
+        
+        $RunspacePool.Close()
+        
         break
+    
     }
     
     if ($Runspaces.IsCompleted -contains $False) {
@@ -90,13 +95,16 @@ while ($true) {
     
     }
     else {
+        
         Write-Verbose -Verbose "Threads finished."
         $RunspacePool.Close()
+        
         # Return the hashtable with results.
         $Data
 
         # Exit the infinite loop.
         break
+
     }
 
 }
