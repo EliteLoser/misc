@@ -71,7 +71,7 @@ foreach ($Computer in $ComputerName) {
 $WaitStartTime = Get-Date
 
 while ($true) {
-
+    
     if (($TotalWaitedSeconds = ([DateTime]::Now - $WaitStartTime).TotalSeconds) -gt $MaximumWaitTimeSeconds) {
         
         Write-Verbose -Verbose "Timeout of $MaximumWaitTimeSeconds reached."
@@ -88,7 +88,7 @@ while ($true) {
         Write-Verbose -Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f $TotalWaitedSeconds) seconds."
         
         Start-Sleep -Milliseconds 250
-    
+        
     }
     else {
         
@@ -97,7 +97,7 @@ while ($true) {
         
         # Return the hashtable with results.
         $Data
-
+        
         # Exit the infinite loop.
         break
 
