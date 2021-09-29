@@ -185,7 +185,6 @@ while ($True) {
         
         Write-Verbose "Closing the runspace pool took $('{0:N3}' -f (((Get-Date) - $TempStartTime).TotalSeconds)) seconds."
         
-
         # Return the hashtable with results.
         $Data
         
