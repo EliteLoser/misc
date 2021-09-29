@@ -161,7 +161,7 @@ while ($True) {
     if (($Runspaces | Select-Object -ExpandProperty Handle | Select-Object -ExpandProperty IsCompleted) -contains $False) {
         
         $UnfinishedThreadCount = @($Runspaces | Where-Object {$False -eq $_.Handle.IsCompleted}).Count
-        Write-Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f $TotalWaitedSeconds) seconds."
+        Write-Verbose "Waiting for $UnfinishedThreadCount threads to finish. Waited for $('{0:N3}' -f ([DateTime]::Now - $WaitStartTime).TotalSeconds) seconds."
         
         Start-Sleep -Milliseconds 250
         
@@ -205,82 +205,3 @@ $EndTime = Get-Date
 Write-Verbose "[$($EndTime.ToString('yyyy\-MM\-dd HH\:mm\:ss'))] Script finished."
 Write-Verbose "Total minutes elapsed: $('{0:N5}' -f ($EndTime - $StartTime).TotalMinutes)"
 
-<#
-
-PS /home/joakim/Documents> $r = ./Runspaces.ps1 -Verbose                
-
-VERBOSE: [2021-09-28 20:41:21] Script started.
-VERBOSE: Waiting for 5 threads to finish. Waited for 0.001 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 0.255 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 0.512 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 0.768 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 1.041 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 1.297 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 1.553 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 1.810 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 2.066 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 2.323 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 2.579 seconds.
-VERBOSE: Waiting for 5 threads to finish. Waited for 2.839 seconds.
-VERBOSE: 3 threads have finished. Running EndInvoke() and Dispose() on them.
-VERBOSE: Ending and disposing of 3 threads took 0.004 seconds.
-VERBOSE: Waiting for 2 threads to finish. Waited for 3.095 seconds.
-VERBOSE: Waiting for 2 threads to finish. Waited for 3.360 seconds.
-VERBOSE: 1 threads have finished. Running EndInvoke() and Dispose() on them.
-VERBOSE: Ending and disposing of 1 threads took 0.001 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 3.615 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 3.875 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 4.131 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 4.387 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 4.643 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 4.907 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 5.161 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 5.416 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 5.672 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 5.930 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 6.186 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 6.442 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 6.698 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 6.956 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 7.212 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 7.467 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 7.723 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 7.978 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 8.237 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 8.492 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 8.748 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 9.004 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 9.262 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 9.517 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 9.773 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 10.029 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 10.287 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 10.543 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 10.799 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 11.056 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 11.311 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 11.564 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 11.818 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 12.073 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 12.329 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 12.587 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 12.843 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 13.099 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 13.353 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 13.609 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 13.862 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 14.118 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 14.374 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 14.632 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 14.888 seconds.
-VERBOSE: Waiting for 1 threads to finish. Waited for 15.145 seconds.
-VERBOSE: 1 threads have finished. Running EndInvoke() and Dispose() on them.
-VERBOSE: Ending and disposing of 1 threads took 0.001 seconds.
-VERBOSE: All threads finished.
-VERBOSE: Closing runspace pool.
-VERBOSE: Closing the runspace pool took 0.002 seconds.
-VERBOSE: [2021-09-28 20:41:37] Script finished.
-VERBOSE: Total minutes elapsed: 0.25795
-PS /home/joakim/Documents> 
-
-#>
