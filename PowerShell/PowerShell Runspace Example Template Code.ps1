@@ -98,7 +98,7 @@ $Runspaces = @(foreach ($Computer in $ComputerName) {
     
     # This is "returned"/passed down the pipeline and collected outside the foreach loop
     # in the variable $Runspaces, an array. To avoid array concatenation (slow when the
-    # array is large). Handle and PowerShell become $null. What now...
+    # array is large).
     [PSCustomObject]@{
         Handle = $PowerShellInstance.BeginInvoke()
         PowerShell = $PowerShellInstance
