@@ -44,14 +44,11 @@ $Data = [HashTable]::Synchronized(@{})
 
 # Ugly line separation some places, to increase readability (shorter lines, 
 # always helps when they fit on GitHub...).
-$InitialSessionState.Variables.Add((
-    New-Object -TypeName System.Management.Automation.Runspaces.SessionStateVariableEntry `
-    -ArgumentList 'Data', $Data, ''))
+$InitialSessionState.Variables.Add((New-Object -TypeName System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'Data', $Data, ''))
 
 # Create a runspace pool based on the initial session state variable,
 # maximum thread count and $Host variable (convenient).
-$RunspacePool = [System.Management.Automation.Runspaces.RunspaceFactory]::CreateRunspacePool(
-    1, $MaximumThreadCount, $InitialSessionState, $Host)
+$RunspacePool = [System.Management.Automation.Runspaces.RunspaceFactory]::CreateRunspacePool(1, $MaximumThreadCount, $InitialSessionState, $Host)
 
 # This seems to work best. Single-threaded apartment?
 $RunspacePool.ApartmentState = 'STA'
@@ -152,8 +149,7 @@ while ($True) {
 
         }
         
-        Write-Verbose "Ending and disposing of $FinishedThreadCount threads took $(
-            '{0:N3}' -f (([DateTime]::Now - $TempStartTime).TotalSeconds)) seconds."
+        Write-Verbose "Ending and disposing of $FinishedThreadCount threads took $('{0:N3}' -f (([DateTime]::Now - $TempStartTime).TotalSeconds)) seconds."
         
 
     }
