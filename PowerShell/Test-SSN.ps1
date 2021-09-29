@@ -112,7 +112,7 @@ function Test-Ssn {
                 }
 
                 # SSNs where the second verification number (kontrollnummer) is 10 are not valid.
-                if ($VerificationNumber1 -eq 10) {
+                if ($VerificationNumber2 -eq 10) {
                     $SsnResult.IsValidSsn = $False
                     $SsnResult.Gender = ''
                     $SsnResult.SsnType = ''
