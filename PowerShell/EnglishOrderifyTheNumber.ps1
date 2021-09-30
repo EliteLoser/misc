@@ -41,6 +41,19 @@ function Format-WithEnglishNumericalOrderLetters {
             43rd
 
         .EXAMPLE
+            PS /home/joakim/Documents> $TestStrings                                                                                                                   
+            This is the 1 time it has been done
+            This is the 2 time we did it
+            This is the 3 word
+            This is the 4 way
+            PS /home/joakim/Documents> $TestStrings | %{ [Regex]::Replace($_, '(\d+)', { Format-WithEnglishNumericalOrderLetters -Number $args[0].Groups[0].Value }) }
+
+            This is the 1st time it has been done
+            This is the 2nd time we did it
+            This is the 3rd word
+            This is the 4th way
+
+        .EXAMPLE
             0..200 | Format-WithEnglishNumericalOrderLetters
 
             1st
