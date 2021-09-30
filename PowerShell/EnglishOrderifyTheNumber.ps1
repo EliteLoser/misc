@@ -296,7 +296,6 @@ function Format-WithEnglishNumericalOrderLetters {
                 '\A(?:[2-9]?3|03)\z' {$NumberString + 'rd'}
                 
             }
-
             
         }
 
