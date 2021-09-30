@@ -29,7 +29,7 @@ function Format-WithEnglishNumericalOrderLetters {
             Now it's handled for PowerShell. Hope I did humankind justice.
 
         .PARAMETER Number
-            Number to append numerical order letters in English for.
+            Number to append numerical order letters in English to.
         
         .EXAMPLE
             1, 10, 4, 202, 43 | Format-WithEnglishNumericalOrderLetters
