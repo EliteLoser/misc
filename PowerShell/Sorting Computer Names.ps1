@@ -1,4 +1,4 @@
-$Servers | Sort @{ Expression = { $_ -replace '^[^.]+\.' } },
+$Servers | Sort-Object @{ Expression = { $_ -replace '^[^.]+\.' } },
     @{ Expression = { [regex]::Replace($_.Split('.')[0], '(\d+)', { '{0:D16}' -f [int] $args[0].Value }) } },
     @{ Expression = { $_ } }
     
