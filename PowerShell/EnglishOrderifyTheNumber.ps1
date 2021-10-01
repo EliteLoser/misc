@@ -290,7 +290,7 @@ function Format-WithEnglishNumericalOrderLetters {
             }
             switch -Regex ($RelevantDigitsString) {
                 
-                '\A(?:4|5|6|7|8|9|1[0-9]|[2-9]0|[2-9]4|[2-9]5|[2-9]6|[2-9]7|[2-9]8|[2-9]9|00|0[4-9])\z' {$NumberString + 'th'}
+                '\A(?:4|5|6|7|8|9|1[0-9]|[2-9]0|[2-9][4-9]|00|0[4-9])\z' {$NumberString + 'th'}
                 '\A(?:[2-9]?1|01)\z' {$NumberString + 'st'}
                 '\A(?:[2-9]?2|02)\z' {$NumberString + 'nd'}
                 '\A(?:[2-9]?3|03)\z' {$NumberString + 'rd'}
