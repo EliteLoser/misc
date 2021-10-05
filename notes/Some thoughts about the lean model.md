@@ -33,11 +33,12 @@ in my experience and opinion, simply because of "metrics", something otherwise h
 
 Some words come to mind: "Infinite growth in a closed system". That "system" is our planet, Earth. We need to balance it out. Fortunately a lot of forces are,
 albeit often financially motivated, pushing towards a more "planet-friendly" future, with notable resistance from sometimes unexpected parties, for reasons
-I cannot understand myself. Capitalism wants growth forever, we're now at a stage where we are seeing the limitations of a past-time system, capitalism,
+I cannot understand myself. Capitalism wants growth forever. We're now at a stage where we are seeing the limitations of a past-time system, capitalism,
 being put up against artificial intelligence, the internet, more widespread knowledge and information, as well as disinformation. Not to mention
 Quantitative Ease, the debt spiral we are currently caught in. At this point you can wonder "does debt size matter", since it seems
 disconnected from economic reality. Maybe we will all sit down in a pow-wow in 10 years and wipe the debt slate clean to give
-the economies a reboot. My impression is that the world is utterly chaotic at this point, but it is indubitably no different from before in that respect. It has always been chaos. Likely it is "bad, but better", a phrase I picked up from Hans Rosling, which I find applies to a _lot_ of concepts.
+the economies a reboot. My impression is that the world is utterly chaotic at this point, but it is indubitably no different from before in that respect. It has always been chaos. Likely it is "bad, but better", a phrase I picked up from Hans Rosling, which I find applies to a _lot_ of concepts. About capitalism,
+I read a book suggesting its future: The Future of Capitalism: Facing the New Anxieties, by Paul Collier. The short version is: pragmatism. Being pragmatic means that you do what is likely to work here and now. The alternatives we have today are populism with flawed logic in almost every aspect and ideology with flawed logic in that some concepts are "timeless". Another book I read, Sapiens, a Brief History of Humankind, by Yuval Noah Harari, says definiteively that we change our views constantly, as this is a signifying trait of homo sapiens after the cognitive revolution 70,000 years ago.
 
 I have no big point with two lines under it, but my concerns are in short: Low capacity locally (storage of resources, or manpower) and the "rush" it introduces on the workers within the system. It seems counter-intuitive with mindfulness and balanced thinking. It also decreases the robustness of a facility or business in my current opinion.
 
