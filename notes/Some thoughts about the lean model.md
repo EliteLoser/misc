@@ -35,7 +35,7 @@ Some words come to mind: "Infinite growth in a closed system". That "system" is 
 albeit often financially motivated, pushing towards a more "planet-friendly" future, with notable resistance from sometimes unexpected parties, for reasons
 I cannot understand myself. Capitalism wants growth forever, we're now at a stage where we are seeing the limitations of a past-time system, capitalism,
 being put up against artificial intelligence, the internet, more widespread knowledge and information, as well as disinformation. Not to mention
-Quantitative Ease, the debt spiral we are currently caught in. At this point you can wonder "does debt size even matter", since it seems
+Quantitative Ease, the debt spiral we are currently caught in. At this point you can wonder "does debt size matter", since it seems
 disconnected from economic reality. Maybe we will all sit down in a pow-wow in 10 years and wipe the debt slate clean to give
 the economies a reboot. My impression is that the world is utterly chaotic at this point, but it is indubitably no different from before in that respect. It has always been chaos. Likely it is "bad, but better", a phrase I picked up from Hans Rosling, which I find applies to a ''lot'' of concepts.
 
