@@ -68,5 +68,5 @@ I cannot give credit for this entry, since the original idea came from someone u
 12.	Personal liberties and freedom of choice are vital and (nearly) undeniable rights for specimens. In accordance with law / similar regulation. Liberal!
 13.	Radical incoming: A certain degree of crime in society is not only to be expected, but actually desirable, because laws simply cannot remain perfect over time, unless a certain “perfection or equilibrium” is reached in this regard in some distant future, which I cannot entirely rule out. For the vastly foreseeable future, crime at a certain percentage (low) is desirable, to maintain momentum in political opinion and socially driving forces and opinions in society.
 14.	Youth is a disease cured by age.
-15.	Children are probably born innocent but become infested with evil with overwhelming odds against them and must be taught why it benefits us all that they discontinue their later instinctual behavior.
+15.	Children are probably born innocent but become infested with evil with overwhelming odds against us and must be taught why it benefits us all that we discontinue the later instinctual behavior.
 16.	
