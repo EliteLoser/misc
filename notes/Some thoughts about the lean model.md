@@ -45,6 +45,6 @@ I have no big point with two lines under it, but my concerns are in short: Low c
 "Progress, but do it peacefully, in serenity and in harmony with the surroundings". That's from my own brain... Quote me freely! 
 (Is there a comma error there? I'm terrible with the "and" comma rules... Feel free to enlighten me, it's been on my mind for a decade or two...).
 
-So allow a fatter ass on the companies/organizations in order to survive famine better? Ok...
+So, allow a fatter ass on the companies/organizations in order to survive famine better? Ok...
 
 Au revoir. And be good so you deserve to be well.
