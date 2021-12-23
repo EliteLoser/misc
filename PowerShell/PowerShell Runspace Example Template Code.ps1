@@ -42,8 +42,7 @@ $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionSta
 # initial session state variable.
 $Data = [HashTable]::Synchronized(@{})
 
-# Ugly line separation some places, to increase readability (shorter lines, 
-# always helps when they fit on GitHub...).
+# Add the synchronized hashtable to the "initial state".
 $InitialSessionState.Variables.Add((New-Object -TypeName System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'Data', $Data, ''))
 
 # Create a runspace pool based on the initial session state variable,
