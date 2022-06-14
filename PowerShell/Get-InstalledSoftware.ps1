@@ -6,6 +6,8 @@ $Installed = $Installed |
     Where-Object {$null -ne $_.DisplayName} |
     Sort-Object -Property DisplayName -Unique |
     ConvertTo-Csv -NoTypeInformation
-$Installed += choco list -lo -r -y | ForEach-Object {'"' + $_.Replace("|", '","') + '","Chocolatey",""'}
+if (Get-Command -Name choco -ErrorAction SilentlyContinue) {
+    $Installed += choco list -lo -r -y | ForEach-Object {'"' + $_.Replace("|", '","') + '","Chocolatey",""'}
+}
 $InstalledString = $Installed -join "`n"
 Write-Verbose -Verbose $InstalledString
