@@ -19,10 +19,12 @@ function Get-TrendLine {
     
         PS> Get-Trendline -Data $inarr
     
-        will return an array of a and b.
+        will return a custom PowerShell object of a,  b,
+        and the sum of the last data set member and the
+        slope value (b), meaning the "next predicted value".
     
     .PARAMETER Data
-        A one dimensional array containing the series of numbers.
+        A one-dimensional array containing the series of numbers.
     .EXAMPLE  
         Get-Trendline -Data @(15, 16, 12, 11, 14, 8, 10)
     #>
@@ -46,6 +48,10 @@ function Get-TrendLine {
     $b = ($SumXY - $SumX * $SumY / $n) / ($SumX2 - $SumX * $SumX / $n)
     $a = $SumY / $n - $b * ($SumX / $n)
     
-    @($a, $b)
+    [PSCustomObject]@{
+        InterceptWithYAxis = $a
+        Slope = $b
+        LastSetMemberPlusSlope = $Data[-1] + $b
+    }
 
 }
