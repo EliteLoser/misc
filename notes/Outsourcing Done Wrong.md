@@ -20,7 +20,7 @@ Ok, this could have been done easy and good. Before I complained in a feedback f
 face ID that worked, but that's gone after I complained (I think it's linked to my complaint that it's gone, 
 lol... grr, world, communication probs galore...)
 
-![peppes_03edited](/notes/imøges/peppes03edited.jpg)
+![peppes_03edited](/notes/imøges/peppes03edited.png)
 
 Except at this screen, if you tap your phone number, nothing happens... You have to enter your phone number digit by digit.
 Kudos for at least a numeric keyboard on this one...
