@@ -1,4 +1,4 @@
-# "Infinite screenshot" on iPhone instead of the screen being locked
+# "Infinite screenshot" on iPhone, instead of the screen being locked
 
 Date of publishing: 2023-02-19
 
