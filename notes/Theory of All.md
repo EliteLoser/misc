@@ -47,7 +47,10 @@ Another thought experiment I had was that the universe is created and destructed
 
 
 
-The geometrical shape that best describes the universe is not regular. It’s what we would call “something round”. My native language, Norwegian, has a word for it: “runding”. Basically “something round”. I do not see a perfect circle, I think that would be like chasing Kepler’s epicircles for planetary orbits. If you want 3D, just make that round thing an even rounder 3D blob that’s very … round and irregular, sort of like parts of some mountains. An interesting future thought experiment is forcing a circle or sphere in a model of the universe and have adaptive inner patterns, just to see what emerges. Also try other shapes? Shrug.
+The geometrical shape that best describes the universe is not regular. It’s what we would call “something round”. My native language, Norwegian, has a word for it: “runding”. Basically “something round”. I do not see a perfect circle, I think that would be like chasing Kepler’s epicircles for planetary orbits. If you want 3D, just make that round thing an even rounder 3D blob that’s very … round and irregular, sort of like parts of some mountains. An interesting future thought experiment is forcing a circle or sphere in a model of the universe and have adaptive inner patterns, just to see what emerges. Also try other shapes? Shrug. I also have had "visions" of sharp spikes.
+
+
+2023-08-21: I forgot to mention, when I wrote this a few years ago, that I am quite certain we will learn that our universe is holographic. Although last I checked still pseudoscience (then again so are superstrings).
 
 
 I cannot give credit for this entry, since the original idea came from someone unknown. I agree with him that the currency of the (now quite distant) future will be creativity/imagination. My aforementioned childhood hero Einstein once said “Knowledge is nothing compared to imagination” – or something in that general direction – and I think the future societal structures will systemize this.
