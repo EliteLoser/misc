@@ -1,6 +1,6 @@
 Timeless Thoughts on Reality, Science, and Society
 
-= I. The Infinite Horizon of Thought =
+== I. The Infinite Horizon of Thought ==
 
 The ideas presented here are not confined to the present but extend into the distant future—perhaps even millennia ahead. While the way we 
 process information will evolve (e.g., brain-integrated math processors, seamless language translation across species), the fundamental 
