@@ -29,8 +29,13 @@ simply the totality of these interactions, an emergent force rather than an exte
 I suspect there is a single, smallest unit of existence, an indivisible building block of the universe, but it remains hidden from us—perhaps eternally. 
 Our scientific advancements have peeled back layers of reality, but each discovery only reveals new questions.
 
-The notion of absolutes—such as "100%"—is an illusion. On a cosmic scale, nothing is truly discrete; every action ripples infinitely across existence. 
-When you lift your arm, its molecules subtly interact with galaxies light-years away. These effects may be immeasurable, but they exist.
+The Illusion—and Reality—of 100%
+
+On a universal scale, absolutes like “100%” are often illusions. Every action, no matter how small, ripples infinitely across existence in ways we may not fully comprehend. For example, when you lift your arm, the molecules in your body interact—however minutely—with forces extending light-years away. In this sense, complete isolation or perfect containment is impossible.
+
+However, within limited and well-defined subsystems, 100% can exist. In controlled environments—such as mathematical constructs, digital systems, or isolated physical experiments—certain conditions can reach absolute completion. A perfect mathematical proof, a checksum validation in computing, or an idealized thermodynamic process within a closed system can all achieve 100% certainty within their specific boundaries.
+
+Yet, as soon as a system interacts with the broader universe, perfection dissolves into approximation. Even the most precise atomic clocks experience minute imperfections when viewed from an infinite perspective. Thus, 100% is both a truth and an illusion—depending on the scale and context in which it is measured.
 
 # IV. Thought Experiments on Reality Perception
 
